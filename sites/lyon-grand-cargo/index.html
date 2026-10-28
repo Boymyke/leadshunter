@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Lyon Grand Cargo — Concept by Ferrn</title>
+<meta name="description" content="Lyon Grand Cargo moves cargo by air, sea and road from our base at the NAHCO export area, Murtala Muhammed Airport, to the UK, USA, Canada, China, Dubai an">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0b1b2b;--ink2:#13293f;--paper:#f6f3ee;--card:#ffffff;--line:#e2ddd4;
+--accent:#e8a33d;--accent-ink:#0b1b2b;--muted:#5d6b78;--r:16px;--ok:#2e9e6a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.logo{font-family:'Archivo', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;letter-spacing:-.02em;line-height:1.08;font-weight:800}
+.concept{background:var(--accent);color:var(--accent-ink);font-size:13px;font-weight:600;text-align:center;padding:8px 16px}
+.concept a{text-decoration:underline}
+nav.top{background:var(--ink);color:#fff;position:sticky;top:0;z-index:20;
+border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(8px)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-size:19px;white-space:nowrap}
+.logo-mark{width:36px;height:36px;border-radius:calc(var(--r)/2);background:var(--accent);display:grid;place-items:center;
+color:var(--accent-ink);font-size:14px;font-family:'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;font-weight:800;letter-spacing:0}
+.links{display:flex;gap:26px;font-size:14px;opacity:.8}
+.links a:hover{opacity:1;color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 22px;font-weight:600;
+font-size:15px;border:0;cursor:pointer;transition:transform .15s,filter .15s;font-family:inherit}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.btn-accent{background:var(--accent);color:var(--accent-ink)}
+.btn-line{border:1px solid rgba(255,255,255,.3);color:#fff;background:transparent}
+.btn-ink{background:var(--ink);color:#fff}
+.nav-cta{padding:10px 18px;font-size:14px}
+.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+radial-gradient(900px 420px at 85% 0%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 60%),
+repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 80px);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;padding-top:72px;padding-bottom:84px;align-items:center}
+.hero .wrap>*{min-width:0}
+.eyebrow{display:inline-flex;gap:10px;align-items:center;font-size:13px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--accent)}
+.hero h1{font-size:clamp(38px,5.4vw,64px);margin:18px 0 20px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.lead{font-size:18px;color:rgba(255,255,255,.72);max-width:540px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.trust{display:flex;gap:26px;margin-top:36px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.72)}
+.trust b{color:#fff;font-family:'Archivo', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;font-size:24px;display:block;font-weight:800}
+.formcard{background:var(--card);color:var(--ink);border-radius:calc(var(--r) + 4px);padding:26px;
+box-shadow:0 30px 60px rgba(0,0,0,.35);border:1px solid var(--line)}
+.formcard h3{font-size:22px;margin-bottom:4px}
+.formcard .sub{font-size:14px;color:var(--muted);margin-bottom:18px}
+.seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:6px;background:var(--paper);padding:5px;border-radius:12px;margin-bottom:16px}
+.seg button{border:0;background:transparent;padding:9px 6px;border-radius:9px;font-weight:600;font-size:13px;cursor:pointer;color:var(--muted);font-family:inherit}
+.seg button.on{background:var(--ink);color:#fff}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:5px;text-transform:uppercase;letter-spacing:.04em}
+.field input,.field select{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 12px;font:inherit;font-size:15px;background:#fff;color:var(--ink)}
+.field input:focus,.field select:focus{outline:2px solid var(--accent);border-color:transparent}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.formcard .btn{width:100%;margin-top:6px}
+.note{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+.done{display:none;text-align:center;padding:30px 6px}
+.done .tick{width:54px;height:54px;border-radius:50%;background:#e4f5ec;color:var(--ok);display:grid;place-items:center;margin:0 auto 14px}
+section{padding:88px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+.head h2{font-size:clamp(30px,3.6vw,44px);max-width:640px}
+.head p{color:var(--muted);max-width:420px}
+.kicker{font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:10px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.ic{width:48px;height:48px;border-radius:calc(var(--r)*.75);background:var(--ink);color:var(--accent);display:grid;place-items:center;margin-bottom:18px}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:15px}
+.card .meta{margin-top:16px;font-size:13px;font-weight:700;color:var(--accent)}
+.band{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:44px;padding-bottom:44px}
+.band b{font-family:'Archivo', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;font-size:42px;display:block;line-height:1;font-weight:800}
+.band span{color:var(--muted);font-size:14px}
+.panel{background:var(--ink2);color:#fff;border-radius:calc(var(--r) + 6px);padding:42px;display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+.panel>*{min-width:0}
+.panel h2{font-size:36px;margin:12px 0}
+.panel p{color:rgba(255,255,255,.72)}
+.inline-form{display:flex;gap:8px;margin-top:22px}
+.inline-form input{flex:1;min-width:0;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;border-radius:999px;padding:12px 18px;font:inherit}
+.inline-form input::placeholder{color:rgba(255,255,255,.5)}
+.timeline{background:var(--card);color:var(--ink);border-radius:var(--r);padding:24px}
+.tl-head{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:18px;gap:10px}
+.tl-head b{color:var(--ink);font-size:16px}
+.step{display:grid;grid-template-columns:22px 1fr auto;gap:12px;padding-bottom:18px;position:relative}
+.step:not(:last-child)::after{content:"";position:absolute;left:10px;top:22px;bottom:2px;width:2px;background:var(--line)}
+.step.d:not(:last-child)::after{background:var(--ok)}
+.dot{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);background:#fff;z-index:1}
+.d .dot{background:var(--ok);border-color:var(--ok)}
+.now .dot{border-color:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 25%,transparent)}
+.step b{display:block;font-size:15px}
+.step span,.step time{font-size:13px;color:var(--muted)}
+.tag{display:inline-block;font-size:11px;font-weight:700;background:var(--paper);color:var(--muted);padding:3px 8px;border-radius:6px;margin-left:6px;vertical-align:middle}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:10px 18px;font-weight:600;font-size:15px}
+.chip small{color:var(--muted);font-weight:500;margin-left:6px}
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.why div{border-top:3px solid var(--accent);padding-top:18px}
+.why h3{font-size:18px;margin-bottom:6px}
+.why p{color:var(--muted);font-size:15px}
+.listings{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.listing{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.listing .img{height:200px;position:relative;display:grid;place-items:center;color:rgba(255,255,255,.85)}
+.listing .img .badge{position:absolute;top:12px;left:12px;background:#fff;color:var(--ink);font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px}
+.listing .body{padding:18px}
+.listing h3{font-size:19px;margin-bottom:4px}
+.listing .loc{color:var(--muted);font-size:14px;display:flex;align-items:center;gap:6px}
+.listing .foot{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.listing .price{font-weight:800;color:var(--ink);font-size:17px}
+.steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+.steps4 div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;counter-increment:s}
+.steps4 div::before{content:counter(s,decimal-leading-zero);font-family:'Archivo', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;font-size:28px;color:var(--accent);display:block;margin-bottom:10px;font-weight:800}
+.steps4 h3{font-size:17px;margin-bottom:6px}
+.steps4 p{color:var(--muted);font-size:14px}
+.quote{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.quote p{font-size:17px;margin-bottom:14px}
+.quote b{display:block}
+.quote span{color:var(--muted);font-size:14px}
+.hours{display:grid;grid-template-columns:1fr 1fr;gap:10px 30px;max-width:520px}
+.hours div{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding-bottom:8px}
+.emergency{background:#fdecec;border:1px solid #f6c9c9;color:#8a1c1c;border-radius:var(--r);padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-weight:600}
+.cta{background:var(--accent);color:var(--accent-ink);border-radius:calc(var(--r) + 6px);padding:48px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.cta h2{font-size:clamp(28px,3.4vw,40px);max-width:600px}
+footer{background:var(--ink);color:rgba(255,255,255,.65);padding:56px 0 28px;font-size:14px}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;margin-bottom:36px}
+footer h4{color:#fff;margin-bottom:12px;font-size:15px}
+footer li{list-style:none;margin-bottom:8px}
+footer .base{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px}
+.wa{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 25px rgba(0,0,0,.25);z-index:30}
+@media(max-width:900px){
+.links{display:none}
+.hero .wrap,.panel{grid-template-columns:1fr}
+.cards,.listings{grid-template-columns:1fr 1fr}
+.why,.band .wrap,.steps4{grid-template-columns:1fr 1fr}
+footer .grid{grid-template-columns:1fr 1fr}
+.panel{padding:26px}
+}
+@media(max-width:560px){
+.cards,.listings,.row2,.hours{grid-template-columns:1fr}
+.cta{padding:30px}
+.hero .wrap{padding-top:44px}
+.step{grid-template-columns:22px 1fr}
+.step time{grid-column:2}
+.nav-cta{display:none}
+section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+<div class="concept">Concept redesign prepared by Ferrn Digital Agency for Lyon Grand Cargo. Not the official website. · <a href="https://www.ferrnagency.com">ferrnagency.com</a></div>
+<nav class="top"><div class="wrap">
+  <a class="logo" href="#"><span class="logo-mark">LG</span>Lyon Grand Cargo</a>
+  <div class="links"><a href="#services">Services</a><a href="#track">Track</a><a href="#coverage">Coverage</a><a href="#why">Why us</a><a href="#contact">Contact</a></div>
+  <a class="btn btn-accent nav-cta" href="#quote">Get a quote</a>
+</div></nav>
+<header class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow">Air · Sea · Road freight from Lagos</span>
+    <h1>Ship anything from Lagos to the world, <em>tracked every step.</em></h1>
+    <p class="lead">Lyon Grand Cargo moves cargo by air, sea and road from our base at the NAHCO export area, Murtala Muhammed Airport, to the UK, USA, Canada, China, Dubai and beyond.</p>
+    <div class="ctas"><a class="btn btn-accent" href="#quote">Get a quote →</a>
+    <a class="btn btn-line" href="#track">Track a shipment</a></div>
+    <div class="trust"><div><b>6,000+</b>packages delivered</div><div><b>1,150+</b>satisfied clients</div><div><b>5 days</b>express air option</div></div>
+  </div>
+  <div class="formcard" id="quote"><form class="f" onsubmit="return done(this)"><h3>Get a shipping quote</h3><p class="sub">Tell us what you&#x27;re sending. We reply on WhatsApp within working hours.</p><div class="seg"><button type="button" class="on">Air</button><button type="button" class="">Sea</button><button type="button" class="">Road</button></div><div class="row2"><div class="field"><label>From</label><input value="Lagos, Nigeria"></div><div class="field"><label>To</label><select><option>United Kingdom</option><option>United States</option><option>Canada</option><option>China</option><option>UAE (Dubai)</option><option>South Africa</option><option>Australia</option><option>Singapore</option><option>Within Nigeria</option></select></div></div><div class="row2"><div class="field"><label>Weight (kg)</label><input type="number" min="1" placeholder="e.g. 25"></div><div class="field"><label>What's inside</label><select><option>Commercial goods</option><option>Food items</option><option>Documents</option><option>Electronics</option><option>Personal effects</option><option>Other</option></select></div></div><div class="field"><label>Your WhatsApp number</label><input type="tel" placeholder="080..."></div><button class="btn btn-accent" type="submit">Request my quote</button><p class="note">No commitment. We reply fast.</p></form><div class="done"><div class="tick"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></div><h3>Request received</h3><p class="sub" style="margin-top:6px">On the live site this goes straight to Lyon Grand Cargo's WhatsApp and inbox, so no enquiry gets lost.</p></div></div>
+</div></header>
+<section id="services"><div class="wrap"><div class="head"><div><span class="kicker">What we do</span><h2>Every way to move your cargo, handled by one team.</h2></div><p>From a single box of foodstuff to a full commercial shipment, we pack, store, clear and deliver.</p></div><div class="cards"><div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-6-20-6 4 6-4 6z"/></svg></div><h3>Air Freight</h3><p>Fast, secure shipping for time-critical goods through DHL, FedEx and UPS partnerships.</p><div class="meta">Express in about 5 days</div></div><div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l2 4h14l2-4M5 17V9h14v8M9 9V5h6v4"/></svg></div><h3>Sea Freight</h3><p>Cost-effective ocean shipping for large and heavy cargo to ports worldwide.</p><div class="meta">Best value for bulk</div></div><div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6h13v10H1zM14 10h5l3 3v3h-8"/><circle cx="5" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div><h3>Road Freight</h3><p>Reliable ground transport across Nigeria, with safe handling from pickup to drop-off.</p><div class="meta">Interstate &amp; local</div></div><div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9l9-6 9 6v12M7 21v-7h10v7"/></svg></div><h3>Warehousing</h3><p>Monitored storage near the airport, short or long term, ready for the next leg.</p><div class="meta">24/7 monitoring</div></div><div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5zM3 8v8l9 5 9-5V8"/></svg></div><h3>Packaging &amp; Storage</h3><p>Professional packing that keeps fragile, perishable and valuable goods safe in transit.</p><div class="meta">Export-ready packing</div></div><div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg></div><h3>Logistics Solutions</h3><p>Ongoing shipping plans for businesses that export regularly. One contact, one invoice.</p><div class="meta">For importers &amp; exporters</div></div></div></div></section>
+<div class="band"><div class="wrap"><div><b>6,000+</b><span>Packages delivered</span></div><div><b>1,150+</b><span>Satisfied clients</span></div><div><b>36</b><span>Cities covered</span></div><div><b>100+</b><span>Tons of goods moved</span></div></div></div>
+<section id="track"><div class="wrap"><div class="panel"><div><span class="eyebrow">Shipment tracking</span><h2>Know where your cargo is, without calling.</h2><p>Customers enter their tracking number and see every step. Fewer "where are my goods?" calls for your team.</p><form class="inline-form" onsubmit="return false"><input placeholder="Tracking number" value="LGC-24817"><button class="btn btn-accent">Track</button></form></div><div class="timeline"><div class="tl-head"><div><b>LGC-24817</b><span class="tag">DEMO</span><br>Lagos → London · Air</div><div style="text-align:right">Est. delivery<br><b>Fri</b></div></div><div class="step d"><div class="dot"></div><div><b>Picked up</b><span>Ikeja, Lagos</span></div><time>Mon 09:12</time></div><div class="step d"><div class="dot"></div><div><b>Packed &amp; weighed</b><span>Our warehouse</span></div><time>Mon 15:40</time></div><div class="step d"><div class="dot"></div><div><b>Departed Lagos</b><span>Murtala Muhammed Airport</span></div><time>Tue 22:05</time></div><div class="step now"><div class="dot"></div><div><b>Arrived destination</b><span>Customs clearance</span></div><time>Wed 06:30</time></div><div class="step "><div class="dot"></div><div><b>Out for delivery</b><span>Recipient address</span></div><time>—</time></div></div></div></div></section>
+<section id="coverage" style="padding-top:88px"><div class="wrap"><div class="head"><h2>Where we ship from Lagos</h2><p>Popular routes for families, students and businesses sending goods abroad.</p></div><div class="chips"><span class="chip">🇬🇧 United Kingdom<small>Air · Sea</small></span><span class="chip">🇺🇸 United States<small>Air · Sea</small></span><span class="chip">🇨🇦 Canada<small>Air · Sea</small></span><span class="chip">🇨🇳 China<small>Air · Sea</small></span><span class="chip">🇦🇪 Dubai, UAE<small>Air</small></span><span class="chip">🇿🇦 South Africa<small>Air</small></span><span class="chip">🇳🇬 Across Nigeria<small>Road</small></span></div></div></section>
+<section id="why" style="padding-top:0"><div class="wrap"><div class="head"><h2>Why clients choose Lyon Grand Cargo</h2></div><div class="why"><div><h3>Based at the airport</h3><p>Our office sits in the NAHCO export area, so cargo moves faster from drop-off to departure.</p></div><div><h3>Global courier partners</h3><p>We work with DHL, FedEx and UPS for secure handling on international routes.</p></div><div><h3>Clear pricing</h3><p>You get a quote before you pay, based on weight, destination and speed.</p></div><div><h3>Real people on WhatsApp</h3><p>Questions answered by our team, plus updates at every step.</p></div></div></div></section>
+
+<section id="contact" style="padding-top:0"><div class="wrap"><div class="cta"><h2>Ready to ship? Get your quote in minutes.</h2>
+<a class="btn btn-ink" href="#quote">Get a quote →</a></div></div></section>
+<footer><div class="wrap">
+  <div class="grid">
+    <div><a class="logo" href="#" style="color:#fff"><span class="logo-mark">LG</span>Lyon Grand Cargo</a><p style="margin-top:14px;max-width:300px">Air, sea and road freight from Lagos to the world. Your goods, delivered with care.</p></div>
+    <div><h4>Services</h4><ul><li>Air Freight</li><li>Sea Freight</li><li>Road Freight</li><li>Warehousing</li><li>Packaging &amp; Storage</li></ul></div>
+    <div><h4>Contact</h4><ul><li>+234 707 091 9004</li><li>lyongrandcargo24@gmail.com</li><li>SAHCO export warehouse, NAHCO, Airport Rd, Ikeja, Lagos</li></ul></div>
+    <div><h4>Hours</h4><ul><li>Mon – Sat: 6:00am – 10:00pm</li><li>Sunday: Closed</li></ul></div>
+  </div>
+  <div class="base"><span>© Lyon Grand Cargo</span><span>Concept design by Ferrn Digital Agency</span></div>
+</div></footer>
+<a class="wa" href="#quote" aria-label="Chat on WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.6-.1 1.3z"/></svg></a>
+<script>
+document.querySelectorAll('.seg').forEach(function(s){s.addEventListener('click',function(e){if(e.target.tagName!=='BUTTON')return;
+s.querySelectorAll('button').forEach(function(b){b.classList.remove('on')});e.target.classList.add('on');});});
+function done(f){var card=f.closest('.formcard')||f;var d=card.querySelector('.done');if(d){f.style.display='none';d.style.display='block';}
+else{f.innerHTML='<p style="padding:20px;text-align:center;font-weight:600">Request received. We\'ll confirm on WhatsApp.</p>';}return false;}
+</script></body>
+</html>

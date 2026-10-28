@@ -1,0 +1,44 @@
+{
+  "slug": "lyon-grand-cargo",
+  "niche": "logistics",
+  "preset": "midnight-gold",
+  "concept": true,
+  "company": "Lyon Grand Cargo",
+  "logo_text": "LG",
+  "eyebrow": "Air · Sea · Road freight from Lagos",
+  "hero_title": "Ship anything from Lagos to the world,",
+  "hero_highlight": "tracked every step.",
+  "hero_sub": "Lyon Grand Cargo moves cargo by air, sea and road from our base at the NAHCO export area, Murtala Muhammed Airport, to the UK, USA, Canada, China, Dubai and beyond.",
+  "hero_stats": [["6,000+", "packages delivered"], ["1,150+", "satisfied clients"], ["5 days", "express air option"]],
+  "stats": [["6,000+", "Packages delivered"], ["1,150+", "Satisfied clients"], ["36", "Cities covered"], ["100+", "Tons of goods moved"]],
+  "tagline": "Air, sea and road freight from Lagos to the world. Your goods, delivered with care.",
+  "services_title": "Every way to move your cargo, handled by one team.",
+  "services_sub": "From a single box of foodstuff to a full commercial shipment, we pack, store, clear and deliver.",
+  "services": [
+    {"icon": "plane", "title": "Air Freight", "text": "Fast, secure shipping for time-critical goods through DHL, FedEx and UPS partnerships.", "meta": "Express in about 5 days"},
+    {"icon": "ship", "title": "Sea Freight", "text": "Cost-effective ocean shipping for large and heavy cargo to ports worldwide.", "meta": "Best value for bulk"},
+    {"icon": "truck", "title": "Road Freight", "text": "Reliable ground transport across Nigeria, with safe handling from pickup to drop-off.", "meta": "Interstate & local"},
+    {"icon": "warehouse", "title": "Warehousing", "text": "Monitored storage near the airport, short or long term, ready for the next leg.", "meta": "24/7 monitoring"},
+    {"icon": "box", "title": "Packaging & Storage", "text": "Professional packing that keeps fragile, perishable and valuable goods safe in transit.", "meta": "Export-ready packing"},
+    {"icon": "globe", "title": "Logistics Solutions", "text": "Ongoing shipping plans for businesses that export regularly. One contact, one invoice.", "meta": "For importers & exporters"}
+  ],
+  "destinations": ["United Kingdom", "United States", "Canada", "China", "UAE (Dubai)", "South Africa", "Australia", "Singapore", "Within Nigeria"],
+  "chips_title": "Where we ship from Lagos",
+  "chips_sub": "Popular routes for families, students and businesses sending goods abroad.",
+  "chips": [["🇬🇧 United Kingdom", "Air · Sea"], ["🇺🇸 United States", "Air · Sea"], ["🇨🇦 Canada", "Air · Sea"], ["🇨🇳 China", "Air · Sea"], ["🇦🇪 Dubai, UAE", "Air"], ["🇿🇦 South Africa", "Air"], ["🇳🇬 Across Nigeria", "Road"]],
+  "tracking_code": "LGC-24817",
+  "tracking_route": "Lagos → London · Air",
+  "features": [
+    {"title": "Based at the airport", "text": "Our office sits in the NAHCO export area, so cargo moves faster from drop-off to departure."},
+    {"title": "Global courier partners", "text": "We work with DHL, FedEx and UPS for secure handling on international routes."},
+    {"title": "Clear pricing", "text": "You get a quote before you pay, based on weight, destination and speed."},
+    {"title": "Real people on WhatsApp", "text": "Questions answered by our team, plus updates at every step."}
+  ],
+  "cta_title": "Ready to ship? Get your quote in minutes.",
+  "contact": {
+    "phone": "+234 707 091 9004",
+    "email": "lyongrandcargo24@gmail.com",
+    "address": "SAHCO export warehouse, NAHCO, Airport Rd, Ikeja, Lagos",
+    "hours": ["Mon – Sat: 6:00am – 10:00pm", "Sunday: Closed"]
+  }
+}

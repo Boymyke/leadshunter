@@ -1,0 +1,37 @@
+{
+  "slug": "demo-brightpath-academy",
+  "niche": "school",
+  "preset": "clean-corporate",
+  "demo": true,
+  "company": "Brightpath Academy",
+  "logo_text": "BA",
+  "eyebrow": "Nursery · Primary · Secondary · Abuja",
+  "hero_title": "Where curious children",
+  "hero_highlight": "become confident leaders.",
+  "hero_sub": "A British-Nigerian curriculum, small classes and teachers who know every child by name. Admissions are open for the new session.",
+  "hero_stats": [["18", "pupils per class"], ["98%", "WAEC credit pass"], ["25+", "clubs & sports"]],
+  "stats": [["18", "Pupils per class"], ["98%", "WAEC credit pass rate"], ["25+", "Clubs and sports"], ["12", "Years of excellence"]],
+  "tagline": "Small classes. Big futures.",
+  "services_kicker": "Programmes",
+  "services_title": "A complete journey from first steps to final exams.",
+  "services_sub": "Each stage builds on the last, so children move up with confidence.",
+  "services": [
+    {"icon": "baby", "title": "Creche & Nursery", "text": "Play-based learning in a safe, warm environment from 6 months.", "meta": "Ages 6 months – 5"},
+    {"icon": "book", "title": "Primary School", "text": "Strong literacy and numeracy, plus science, coding and French.", "meta": "Primary 1 – 6"},
+    {"icon": "users", "title": "Secondary School", "text": "WAEC, NECO and IGCSE preparation with university guidance.", "meta": "JSS 1 – SS 3"},
+    {"icon": "laptop", "title": "STEM & Coding", "text": "Robotics, coding and a modern computer lab for every class.", "meta": "From Primary 3"},
+    {"icon": "palette", "title": "Arts & Music", "text": "Drama, choir, visual arts and instruments taught by specialists.", "meta": "All ages"},
+    {"icon": "bus", "title": "School Bus", "text": "Tracked buses covering major routes across Abuja.", "meta": "Door to door"}
+  ],
+  "classes": ["Creche", "Nursery 1–2", "Reception", "Primary 1–3", "Primary 4–6", "JSS 1", "SS 1"],
+  "chips_title": "Clubs and activities",
+  "chips": ["Football", "Swimming", "Robotics", "Debate", "Chess", "Choir", "Drama", "Coding", "Taekwondo"],
+  "features": [
+    {"title": "Small classes", "text": "No more than 18 pupils, so every child gets real attention."},
+    {"title": "Qualified teachers", "text": "Trained, vetted and continuously developed every term."},
+    {"title": "Parents in the loop", "text": "Weekly updates, termly reports and an open-door policy."},
+    {"title": "Safe campus", "text": "CCTV, controlled gates and a full-time nurse on site."}
+  ],
+  "cta_title": "Places fill quickly. Book your school tour today.",
+  "contact": {"phone": "+234 800 000 0000", "email": "admissions@brightpath.example", "address": "Wuse II, Abuja", "hours": ["Mon – Fri: 7:30am – 4:00pm", "Tours: Tue & Thu, 10am"]}
+}

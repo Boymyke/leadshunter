@@ -1,0 +1,43 @@
+{
+  "slug": "demo-harbourline-homes",
+  "niche": "realestate",
+  "preset": "warm-editorial",
+  "demo": true,
+  "company": "Harbourline Homes",
+  "logo_text": "HH",
+  "eyebrow": "Lekki · Ikoyi · Ajah",
+  "hero_title": "Homes worth coming home to,",
+  "hero_highlight": "verified before you visit.",
+  "hero_sub": "Apartments, terraces and land with clean titles, honest prices and inspections booked in one tap.",
+  "hero_stats": [["120+", "homes sold"], ["100%", "title-verified"], ["48h", "inspection booking"]],
+  "stats": [["120+", "Homes sold"], ["₦18B+", "Property value moved"], ["9", "Estates covered"], ["4.9★", "Buyer rating"]],
+  "tagline": "Verified homes and land across Lagos.",
+  "services_kicker": "How we help",
+  "services_title": "Buying property in Lagos, without the stress.",
+  "services_sub": "We check the papers, show you the property and stay with you until the keys are in your hand.",
+  "services": [
+    {"icon": "home", "title": "Homes for sale", "text": "Apartments, terraces and detached houses in serviced estates.", "meta": "Off-plan & completed"},
+    {"icon": "pin", "title": "Land", "text": "Dry, accessible plots with verified C of O or Governor's consent.", "meta": "Title checked"},
+    {"icon": "key", "title": "Rentals & short-lets", "text": "Furnished and unfurnished homes for families and executives.", "meta": "Flexible terms"},
+    {"icon": "shield", "title": "Title verification", "text": "We search every document at the land registry before you pay.", "meta": "Before any payment"},
+    {"icon": "chart", "title": "Investment advice", "text": "Rental yield and appreciation numbers for every property we list.", "meta": "Real numbers"},
+    {"icon": "building", "title": "Property management", "text": "Tenants, rent collection and maintenance handled for owners abroad.", "meta": "For diaspora owners"}
+  ],
+  "locations": ["Lekki Phase 1", "Ikoyi", "Ajah", "Victoria Island", "Ibeju-Lekki"],
+  "listings_title": "Homes and land worth seeing",
+  "listings": [
+    {"title": "4-bed terrace with BQ", "location": "Lekki Phase 1", "specs": "4 bed · 5 bath", "price": "₦185M", "tag": "For sale"},
+    {"title": "3-bed waterfront apartment", "location": "Ikoyi", "specs": "3 bed · 4 bath", "price": "₦12M/yr", "tag": "For rent"},
+    {"title": "600sqm plot, C of O", "location": "Ibeju-Lekki", "specs": "600 sqm", "price": "₦28M", "tag": "Land"}
+  ],
+  "chips_title": "Areas we cover",
+  "chips": ["Lekki Phase 1", "Ikoyi", "Victoria Island", "Ajah", "Sangotedo", "Ibeju-Lekki"],
+  "features": [
+    {"title": "Every title verified", "text": "We search the registry before a property is listed, not after you pay."},
+    {"title": "Prices you can trust", "text": "No inflated agent markups. You see what the owner is asking."},
+    {"title": "Inspections in 48 hours", "text": "Book online and an agent meets you at the property."},
+    {"title": "Help after the sale", "text": "Lawyers, surveyors and property managers, all in one place."}
+  ],
+  "cta_title": "Find your home this month. Book an inspection today.",
+  "contact": {"phone": "+234 800 000 0000", "email": "hello@harbourline.example", "address": "Admiralty Way, Lekki Phase 1, Lagos", "hours": ["Mon – Sat: 9:00am – 6:00pm", "Sunday: by appointment"]}
+}

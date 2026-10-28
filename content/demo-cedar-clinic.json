@@ -1,0 +1,36 @@
+{
+  "slug": "demo-cedar-clinic",
+  "niche": "clinic",
+  "preset": "fresh-care",
+  "demo": true,
+  "company": "Cedar Specialist Clinic",
+  "logo_text": "CC",
+  "eyebrow": "Specialist care · Port Harcourt",
+  "hero_title": "See the right doctor,",
+  "hero_highlight": "without the long wait.",
+  "hero_sub": "Book a consultation online, get a confirmed time on WhatsApp, and walk straight in. Family medicine, women's health, children's care and diagnostics under one roof.",
+  "hero_stats": [["15 min", "average wait"], ["12", "specialists"], ["24/7", "emergency line"]],
+  "tagline": "Specialist care, close to home.",
+  "services_kicker": "Departments",
+  "services_title": "Complete care for the whole family.",
+  "services_sub": "From routine check-ups to specialist treatment, with results and reminders sent to your phone.",
+  "services": [
+    {"icon": "steth", "title": "Family Medicine", "text": "Consultations, check-ups and treatment for adults and children.", "meta": "Walk-ins welcome"},
+    {"icon": "heart", "title": "Women's Health", "text": "Antenatal care, gynaecology and family planning.", "meta": "Female doctors available"},
+    {"icon": "baby", "title": "Paediatrics", "text": "Immunisations, growth checks and care for sick children.", "meta": "Child-friendly rooms"},
+    {"icon": "flask", "title": "Laboratory", "text": "Blood tests, scans and screening with fast, clear results.", "meta": "Results by WhatsApp"},
+    {"icon": "tooth", "title": "Dental", "text": "Cleaning, fillings, braces and cosmetic dentistry.", "meta": "Weekend clinics"},
+    {"icon": "shield", "title": "Corporate & HMO", "text": "Staff health checks and care for major HMO plans.", "meta": "Most HMOs accepted"}
+  ],
+  "departments": ["General consultation", "Women's health", "Paediatrics", "Laboratory tests", "Dental", "Corporate / HMO"],
+  "chips_title": "HMOs we accept",
+  "chips": ["Hygeia", "AXA Mansard", "Reliance HMO", "Leadway Health", "Avon HMO", "NHIS"],
+  "features": [
+    {"title": "Short waits", "text": "Booked patients are seen within 15 minutes of arrival on average."},
+    {"title": "Clear explanations", "text": "Doctors who take time to explain your diagnosis and options."},
+    {"title": "Results on your phone", "text": "Lab results and reminders sent securely by WhatsApp."},
+    {"title": "Clean and modern", "text": "Modern equipment and strict infection control in every room."}
+  ],
+  "cta_title": "Your health can't wait. Book your appointment now.",
+  "contact": {"phone": "+234 800 000 0000", "email": "care@cedarclinic.example", "address": "Trans-Amadi, Port Harcourt", "hours": ["Mon – Fri: 8am – 8pm", "Sat: 9am – 4pm", "Emergencies: 24/7"]}
+}

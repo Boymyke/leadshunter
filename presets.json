@@ -1,0 +1,39 @@
+{
+  "_about": "Style presets for preview sites. Each niche has a default; the AI routine can pick another (or tweak accent/ink) to match a lead's brand or an image in moodboard/.",
+  "midnight-gold": {
+    "label": "Midnight & gold: premium, industrial, trustworthy",
+    "ink": "#0b1b2b", "ink2": "#13293f", "paper": "#f6f3ee", "card": "#ffffff", "line": "#e2ddd4",
+    "accent": "#e8a33d", "accent_ink": "#0b1b2b", "muted": "#5d6b78",
+    "head_font": "Archivo", "body_font": "Inter", "head_weight": "800", "radius": "16px", "hero": "dark"
+  },
+  "warm-editorial": {
+    "label": "Warm editorial: luxury real estate, hospitality",
+    "ink": "#1f1a17", "ink2": "#2b2420", "paper": "#f4efe6", "card": "#fffdf9", "line": "#e5dccd",
+    "accent": "#b4532a", "accent_ink": "#ffffff", "muted": "#6f6459",
+    "head_font": "Fraunces", "body_font": "Inter", "head_weight": "600", "radius": "6px", "hero": "light"
+  },
+  "clean-corporate": {
+    "label": "Clean corporate: schools, B2B, professional services",
+    "ink": "#0f172a", "ink2": "#1e293b", "paper": "#ffffff", "card": "#ffffff", "line": "#e5e7eb",
+    "accent": "#2563eb", "accent_ink": "#ffffff", "muted": "#64748b",
+    "head_font": "Plus Jakarta Sans", "body_font": "Plus Jakarta Sans", "head_weight": "800", "radius": "14px", "hero": "light"
+  },
+  "fresh-care": {
+    "label": "Fresh care: clinics, wellness, pharmacies",
+    "ink": "#0e2a2a", "ink2": "#123636", "paper": "#f3f8f6", "card": "#ffffff", "line": "#dbe7e3",
+    "accent": "#14a37f", "accent_ink": "#ffffff", "muted": "#5b706d",
+    "head_font": "Manrope", "body_font": "Manrope", "head_weight": "800", "radius": "20px", "hero": "light"
+  },
+  "bold-mono": {
+    "label": "Bold mono: modern startups, fintech, creative",
+    "ink": "#111111", "ink2": "#1c1c1c", "paper": "#f2f1ee", "card": "#ffffff", "line": "#dedcd6",
+    "accent": "#c6f135", "accent_ink": "#111111", "muted": "#666666",
+    "head_font": "Space Grotesk", "body_font": "Inter", "head_weight": "700", "radius": "4px", "hero": "dark"
+  },
+  "niche_defaults": {
+    "logistics": "midnight-gold",
+    "realestate": "warm-editorial",
+    "school": "clean-corporate",
+    "clinic": "fresh-care"
+  }
+}

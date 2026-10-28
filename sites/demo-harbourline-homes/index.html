@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Harbourline Homes — Concept by Ferrn</title>
+<meta name="description" content="Apartments, terraces and land with clean titles, honest prices and inspections booked in one tap.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1f1a17;--ink2:#2b2420;--paper:#f4efe6;--card:#fffdf9;--line:#e5dccd;
+--accent:#b4532a;--accent-ink:#ffffff;--muted:#6f6459;--r:6px;--ok:#2e9e6a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.logo{font-family:'Fraunces', Georgia, 'Times New Roman', serif;letter-spacing:-.02em;line-height:1.08;font-weight:600}
+.concept{background:var(--accent);color:var(--accent-ink);font-size:13px;font-weight:600;text-align:center;padding:8px 16px}
+.concept a{text-decoration:underline}
+nav.top{background:rgba(255,255,255,.92);color:var(--ink);position:sticky;top:0;z-index:20;
+border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-size:19px;white-space:nowrap}
+.logo-mark{width:36px;height:36px;border-radius:calc(var(--r)/2);background:var(--accent);display:grid;place-items:center;
+color:var(--accent-ink);font-size:14px;font-family:'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;font-weight:800;letter-spacing:0}
+.links{display:flex;gap:26px;font-size:14px;opacity:.8}
+.links a:hover{opacity:1;color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 22px;font-weight:600;
+font-size:15px;border:0;cursor:pointer;transition:transform .15s,filter .15s;font-family:inherit}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.btn-accent{background:var(--accent);color:var(--accent-ink)}
+.btn-line{border:1px solid var(--ink);color:var(--ink);background:transparent}
+.btn-ink{background:var(--ink);color:#fff}
+.nav-cta{padding:10px 18px;font-size:14px}
+.hero{background:var(--paper);color:var(--ink);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+radial-gradient(900px 420px at 85% 0%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 60%),
+repeating-linear-gradient(90deg,rgba(0,0,0,.035) 0 1px,transparent 1px 80px);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;padding-top:72px;padding-bottom:84px;align-items:center}
+.hero .wrap>*{min-width:0}
+.eyebrow{display:inline-flex;gap:10px;align-items:center;font-size:13px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--accent)}
+.hero h1{font-size:clamp(38px,5.4vw,64px);margin:18px 0 20px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted);max-width:540px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.trust{display:flex;gap:26px;margin-top:36px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.trust b{color:var(--ink);font-family:'Fraunces', Georgia, 'Times New Roman', serif;font-size:24px;display:block;font-weight:600}
+.formcard{background:var(--card);color:var(--ink);border-radius:calc(var(--r) + 4px);padding:26px;
+box-shadow:0 30px 60px rgba(0,0,0,.10);border:1px solid var(--line)}
+.formcard h3{font-size:22px;margin-bottom:4px}
+.formcard .sub{font-size:14px;color:var(--muted);margin-bottom:18px}
+.seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:6px;background:var(--paper);padding:5px;border-radius:12px;margin-bottom:16px}
+.seg button{border:0;background:transparent;padding:9px 6px;border-radius:9px;font-weight:600;font-size:13px;cursor:pointer;color:var(--muted);font-family:inherit}
+.seg button.on{background:var(--ink);color:#fff}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:5px;text-transform:uppercase;letter-spacing:.04em}
+.field input,.field select{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 12px;font:inherit;font-size:15px;background:#fff;color:var(--ink)}
+.field input:focus,.field select:focus{outline:2px solid var(--accent);border-color:transparent}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.formcard .btn{width:100%;margin-top:6px}
+.note{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+.done{display:none;text-align:center;padding:30px 6px}
+.done .tick{width:54px;height:54px;border-radius:50%;background:#e4f5ec;color:var(--ok);display:grid;place-items:center;margin:0 auto 14px}
+section{padding:88px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+.head h2{font-size:clamp(30px,3.6vw,44px);max-width:640px}
+.head p{color:var(--muted);max-width:420px}
+.kicker{font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:10px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.ic{width:48px;height:48px;border-radius:calc(var(--r)*.75);background:var(--ink);color:var(--accent);display:grid;place-items:center;margin-bottom:18px}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:15px}
+.card .meta{margin-top:16px;font-size:13px;font-weight:700;color:var(--accent)}
+.band{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:44px;padding-bottom:44px}
+.band b{font-family:'Fraunces', Georgia, 'Times New Roman', serif;font-size:42px;display:block;line-height:1;font-weight:600}
+.band span{color:var(--muted);font-size:14px}
+.panel{background:var(--ink2);color:#fff;border-radius:calc(var(--r) + 6px);padding:42px;display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+.panel>*{min-width:0}
+.panel h2{font-size:36px;margin:12px 0}
+.panel p{color:rgba(255,255,255,.72)}
+.inline-form{display:flex;gap:8px;margin-top:22px}
+.inline-form input{flex:1;min-width:0;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;border-radius:999px;padding:12px 18px;font:inherit}
+.inline-form input::placeholder{color:rgba(255,255,255,.5)}
+.timeline{background:var(--card);color:var(--ink);border-radius:var(--r);padding:24px}
+.tl-head{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:18px;gap:10px}
+.tl-head b{color:var(--ink);font-size:16px}
+.step{display:grid;grid-template-columns:22px 1fr auto;gap:12px;padding-bottom:18px;position:relative}
+.step:not(:last-child)::after{content:"";position:absolute;left:10px;top:22px;bottom:2px;width:2px;background:var(--line)}
+.step.d:not(:last-child)::after{background:var(--ok)}
+.dot{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);background:#fff;z-index:1}
+.d .dot{background:var(--ok);border-color:var(--ok)}
+.now .dot{border-color:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 25%,transparent)}
+.step b{display:block;font-size:15px}
+.step span,.step time{font-size:13px;color:var(--muted)}
+.tag{display:inline-block;font-size:11px;font-weight:700;background:var(--paper);color:var(--muted);padding:3px 8px;border-radius:6px;margin-left:6px;vertical-align:middle}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:10px 18px;font-weight:600;font-size:15px}
+.chip small{color:var(--muted);font-weight:500;margin-left:6px}
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.why div{border-top:3px solid var(--accent);padding-top:18px}
+.why h3{font-size:18px;margin-bottom:6px}
+.why p{color:var(--muted);font-size:15px}
+.listings{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.listing{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.listing .img{height:200px;position:relative;display:grid;place-items:center;color:rgba(255,255,255,.85)}
+.listing .img .badge{position:absolute;top:12px;left:12px;background:#fff;color:var(--ink);font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px}
+.listing .body{padding:18px}
+.listing h3{font-size:19px;margin-bottom:4px}
+.listing .loc{color:var(--muted);font-size:14px;display:flex;align-items:center;gap:6px}
+.listing .foot{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.listing .price{font-weight:800;color:var(--ink);font-size:17px}
+.steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+.steps4 div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;counter-increment:s}
+.steps4 div::before{content:counter(s,decimal-leading-zero);font-family:'Fraunces', Georgia, 'Times New Roman', serif;font-size:28px;color:var(--accent);display:block;margin-bottom:10px;font-weight:600}
+.steps4 h3{font-size:17px;margin-bottom:6px}
+.steps4 p{color:var(--muted);font-size:14px}
+.quote{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.quote p{font-size:17px;margin-bottom:14px}
+.quote b{display:block}
+.quote span{color:var(--muted);font-size:14px}
+.hours{display:grid;grid-template-columns:1fr 1fr;gap:10px 30px;max-width:520px}
+.hours div{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding-bottom:8px}
+.emergency{background:#fdecec;border:1px solid #f6c9c9;color:#8a1c1c;border-radius:var(--r);padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-weight:600}
+.cta{background:var(--accent);color:var(--accent-ink);border-radius:calc(var(--r) + 6px);padding:48px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.cta h2{font-size:clamp(28px,3.4vw,40px);max-width:600px}
+footer{background:var(--ink);color:rgba(255,255,255,.65);padding:56px 0 28px;font-size:14px}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;margin-bottom:36px}
+footer h4{color:#fff;margin-bottom:12px;font-size:15px}
+footer li{list-style:none;margin-bottom:8px}
+footer .base{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px}
+.wa{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 25px rgba(0,0,0,.25);z-index:30}
+@media(max-width:900px){
+.links{display:none}
+.hero .wrap,.panel{grid-template-columns:1fr}
+.cards,.listings{grid-template-columns:1fr 1fr}
+.why,.band .wrap,.steps4{grid-template-columns:1fr 1fr}
+footer .grid{grid-template-columns:1fr 1fr}
+.panel{padding:26px}
+}
+@media(max-width:560px){
+.cards,.listings,.row2,.hours{grid-template-columns:1fr}
+.cta{padding:30px}
+.hero .wrap{padding-top:44px}
+.step{grid-template-columns:22px 1fr}
+.step time{grid-column:2}
+.nav-cta{display:none}
+section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+<div class="concept">Ferrn niche template demo. Harbourline Homes is a fictional business. · <a href="https://www.ferrnagency.com">ferrnagency.com</a></div>
+<nav class="top"><div class="wrap">
+  <a class="logo" href="#"><span class="logo-mark">HH</span>Harbourline Homes</a>
+  <div class="links"><a href="#listings">Listings</a><a href="#services">Services</a><a href="#coverage">Areas</a><a href="#why">Why us</a><a href="#contact">Contact</a></div>
+  <a class="btn btn-accent nav-cta" href="#search">Find a property</a>
+</div></nav>
+<header class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow">Lekki · Ikoyi · Ajah</span>
+    <h1>Homes worth coming home to, <em>verified before you visit.</em></h1>
+    <p class="lead">Apartments, terraces and land with clean titles, honest prices and inspections booked in one tap.</p>
+    <div class="ctas"><a class="btn btn-accent" href="#search">Find a property →</a>
+    <a class="btn btn-line" href="#inspect">Book an inspection</a></div>
+    <div class="trust"><div><b>120+</b>homes sold</div><div><b>100%</b>title-verified</div><div><b>48h</b>inspection booking</div></div>
+  </div>
+  <div class="formcard" id="search"><form class="f" onsubmit="return done(this)"><h3>Find your next property</h3><p class="sub">Tell us what you want. Our team sends matching listings on WhatsApp.</p><div class="seg"><button type=button class="on">Buy</button><button type=button>Rent</button><button type=button>Land</button></div><div class="field"><label>Location</label><select><option>Lekki Phase 1</option><option>Ikoyi</option><option>Ajah</option><option>Victoria Island</option><option>Ibeju-Lekki</option></select></div><div class="row2"><div class="field"><label>Property type</label><select><option>Apartment</option><option>Terrace</option><option>Detached house</option><option>Land</option></select></div><div class="field"><label>Budget</label><select><option>Under ₦50M</option><option>₦50M – ₦150M</option><option>₦150M – ₦400M</option><option>Above ₦400M</option></select></div></div><div class="field"><label>Your WhatsApp number</label><input type="tel" placeholder="080..."></div><button class="btn btn-accent" type="submit">Show me properties</button><p class="note">No commitment. We reply fast.</p></form><div class="done"><div class="tick"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></div><h3>Request received</h3><p class="sub" style="margin-top:6px">On the live site this goes straight to Harbourline Homes's WhatsApp and inbox, so no enquiry gets lost.</p></div></div>
+</div></header>
+<section id="services"><div class="wrap"><div class="head"><div><span class="kicker">How we help</span><h2>Buying property in Lagos, without the stress.</h2></div><p>We check the papers, show you the property and stay with you until the keys are in your hand.</p></div><div class="cards"><div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v10H3zM9 21v-6h6v6"/></svg></div><h3>Homes for sale</h3><p>Apartments, terraces and detached houses in serviced estates.</p><div class="meta">Off-plan &amp; completed</div></div><div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-7 7-12a7 7 0 10-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3>Land</h3><p>Dry, accessible plots with verified C of O or Governor&#x27;s consent.</p><div class="meta">Title checked</div></div><div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3"/></svg></div><h3>Rentals &amp; short-lets</h3><p>Furnished and unfurnished homes for families and executives.</p><div class="meta">Flexible terms</div></div><div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Title verification</h3><p>We search every document at the land registry before you pay.</p><div class="meta">Before any payment</div></div><div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3>Investment advice</h3><p>Rental yield and appreciation numbers for every property we list.</p><div class="meta">Real numbers</div></div><div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V3h10v18M14 9h6v12M8 7h2M8 11h2M8 15h2M17 13h0M17 17h0"/></svg></div><h3>Property management</h3><p>Tenants, rent collection and maintenance handled for owners abroad.</p><div class="meta">For diaspora owners</div></div></div></div></section>
+<div class="band"><div class="wrap"><div><b>120+</b><span>Homes sold</span></div><div><b>₦18B+</b><span>Property value moved</span></div><div><b>9</b><span>Estates covered</span></div><div><b>4.9★</b><span>Buyer rating</span></div></div></div>
+<section id="listings"><div class="wrap"><div class="head"><div><span class="kicker">Featured</span><h2>Homes and land worth seeing</h2></div><p>Sample layout. On the live site your real listings, photos and prices appear here, updated from one dashboard.</p></div><div class="listings"><article class="listing"><div class="img" style="background:linear-gradient(135deg,#3b5249,#9caf88)"><span class="badge">For sale</span><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v10H3zM9 21v-6h6v6"/></svg></div><div class="body"><h3>4-bed terrace with BQ</h3><div class="loc"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-7 7-12a7 7 0 10-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Lekki Phase 1</div><div class="foot"><span>4 bed · 5 bath</span><span class="price">₦185M</span></div></div></article><article class="listing"><div class="img" style="background:linear-gradient(135deg,#5b4636,#c49a6c)"><span class="badge">For rent</span><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v10H3zM9 21v-6h6v6"/></svg></div><div class="body"><h3>3-bed waterfront apartment</h3><div class="loc"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-7 7-12a7 7 0 10-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Ikoyi</div><div class="foot"><span>3 bed · 4 bath</span><span class="price">₦12M/yr</span></div></div></article><article class="listing"><div class="img" style="background:linear-gradient(135deg,#2f3e57,#8aa1c1)"><span class="badge">Land</span><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v10H3zM9 21v-6h6v6"/></svg></div><div class="body"><h3>600sqm plot, C of O</h3><div class="loc"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-7 7-12a7 7 0 10-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Ibeju-Lekki</div><div class="foot"><span>600 sqm</span><span class="price">₦28M</span></div></div></article></div></div></section><section id="inspect" style="padding-top:0px"><div class="wrap"><div class="panel"><div><span class="eyebrow">Inspections</span><h2>See it in person this week.</h2><p>Pick a day and our agent meets you at the property. Confirmation comes on WhatsApp.</p></div><form class="formcard" onsubmit="return done(this)" style="box-shadow:none"><div class="row2"><div class="field"><label>Property</label><input placeholder="Which listing?"></div><div class="field"><label>Preferred day</label><input type="date"></div></div><div class="field"><label>WhatsApp number</label><input type="tel" placeholder="080..."></div><button class="btn btn-accent" type="submit">Book inspection</button></form></div></div></section>
+<section id="coverage" style="padding-top:88px"><div class="wrap"><div class="head"><h2>Areas we cover</h2><p></p></div><div class="chips"><span class="chip">Lekki Phase 1</span><span class="chip">Ikoyi</span><span class="chip">Victoria Island</span><span class="chip">Ajah</span><span class="chip">Sangotedo</span><span class="chip">Ibeju-Lekki</span></div></div></section>
+<section id="why" style="padding-top:0"><div class="wrap"><div class="head"><h2>Why clients choose Harbourline Homes</h2></div><div class="why"><div><h3>Every title verified</h3><p>We search the registry before a property is listed, not after you pay.</p></div><div><h3>Prices you can trust</h3><p>No inflated agent markups. You see what the owner is asking.</p></div><div><h3>Inspections in 48 hours</h3><p>Book online and an agent meets you at the property.</p></div><div><h3>Help after the sale</h3><p>Lawyers, surveyors and property managers, all in one place.</p></div></div></div></section>
+
+<section id="contact" style="padding-top:0"><div class="wrap"><div class="cta"><h2>Find your home this month. Book an inspection today.</h2>
+<a class="btn btn-ink" href="#search">Find a property →</a></div></div></section>
+<footer><div class="wrap">
+  <div class="grid">
+    <div><a class="logo" href="#" style="color:#fff"><span class="logo-mark">HH</span>Harbourline Homes</a><p style="margin-top:14px;max-width:300px">Verified homes and land across Lagos.</p></div>
+    <div><h4>Services</h4><ul><li>Homes for sale</li><li>Land</li><li>Rentals &amp; short-lets</li><li>Title verification</li><li>Investment advice</li></ul></div>
+    <div><h4>Contact</h4><ul><li>+234 800 000 0000</li><li>hello@harbourline.example</li><li>Admiralty Way, Lekki Phase 1, Lagos</li></ul></div>
+    <div><h4>Hours</h4><ul><li>Mon – Sat: 9:00am – 6:00pm</li><li>Sunday: by appointment</li></ul></div>
+  </div>
+  <div class="base"><span>© Harbourline Homes</span><span>Concept design by Ferrn Digital Agency</span></div>
+</div></footer>
+<a class="wa" href="#search" aria-label="Chat on WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.6-.1 1.3z"/></svg></a>
+<script>
+document.querySelectorAll('.seg').forEach(function(s){s.addEventListener('click',function(e){if(e.target.tagName!=='BUTTON')return;
+s.querySelectorAll('button').forEach(function(b){b.classList.remove('on')});e.target.classList.add('on');});});
+function done(f){var card=f.closest('.formcard')||f;var d=card.querySelector('.done');if(d){f.style.display='none';d.style.display='block';}
+else{f.innerHTML='<p style="padding:20px;text-align:center;font-weight:600">Request received. We\'ll confirm on WhatsApp.</p>';}return false;}
+</script></body>
+</html>

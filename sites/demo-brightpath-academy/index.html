@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Brightpath Academy — Concept by Ferrn</title>
+<meta name="description" content="A British-Nigerian curriculum, small classes and teachers who know every child by name. Admissions are open for the new session.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f172a;--ink2:#1e293b;--paper:#ffffff;--card:#ffffff;--line:#e5e7eb;
+--accent:#2563eb;--accent-ink:#ffffff;--muted:#64748b;--r:14px;--ok:#2e9e6a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.logo{font-family:'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;letter-spacing:-.02em;line-height:1.08;font-weight:800}
+.concept{background:var(--accent);color:var(--accent-ink);font-size:13px;font-weight:600;text-align:center;padding:8px 16px}
+.concept a{text-decoration:underline}
+nav.top{background:rgba(255,255,255,.92);color:var(--ink);position:sticky;top:0;z-index:20;
+border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-size:19px;white-space:nowrap}
+.logo-mark{width:36px;height:36px;border-radius:calc(var(--r)/2);background:var(--accent);display:grid;place-items:center;
+color:var(--accent-ink);font-size:14px;font-family:'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;font-weight:800;letter-spacing:0}
+.links{display:flex;gap:26px;font-size:14px;opacity:.8}
+.links a:hover{opacity:1;color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 22px;font-weight:600;
+font-size:15px;border:0;cursor:pointer;transition:transform .15s,filter .15s;font-family:inherit}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.btn-accent{background:var(--accent);color:var(--accent-ink)}
+.btn-line{border:1px solid var(--ink);color:var(--ink);background:transparent}
+.btn-ink{background:var(--ink);color:#fff}
+.nav-cta{padding:10px 18px;font-size:14px}
+.hero{background:var(--paper);color:var(--ink);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+radial-gradient(900px 420px at 85% 0%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 60%),
+repeating-linear-gradient(90deg,rgba(0,0,0,.035) 0 1px,transparent 1px 80px);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;padding-top:72px;padding-bottom:84px;align-items:center}
+.hero .wrap>*{min-width:0}
+.eyebrow{display:inline-flex;gap:10px;align-items:center;font-size:13px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--accent)}
+.hero h1{font-size:clamp(38px,5.4vw,64px);margin:18px 0 20px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted);max-width:540px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.trust{display:flex;gap:26px;margin-top:36px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.trust b{color:var(--ink);font-family:'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;font-size:24px;display:block;font-weight:800}
+.formcard{background:var(--card);color:var(--ink);border-radius:calc(var(--r) + 4px);padding:26px;
+box-shadow:0 30px 60px rgba(0,0,0,.10);border:1px solid var(--line)}
+.formcard h3{font-size:22px;margin-bottom:4px}
+.formcard .sub{font-size:14px;color:var(--muted);margin-bottom:18px}
+.seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:6px;background:var(--paper);padding:5px;border-radius:12px;margin-bottom:16px}
+.seg button{border:0;background:transparent;padding:9px 6px;border-radius:9px;font-weight:600;font-size:13px;cursor:pointer;color:var(--muted);font-family:inherit}
+.seg button.on{background:var(--ink);color:#fff}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:5px;text-transform:uppercase;letter-spacing:.04em}
+.field input,.field select{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 12px;font:inherit;font-size:15px;background:#fff;color:var(--ink)}
+.field input:focus,.field select:focus{outline:2px solid var(--accent);border-color:transparent}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.formcard .btn{width:100%;margin-top:6px}
+.note{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+.done{display:none;text-align:center;padding:30px 6px}
+.done .tick{width:54px;height:54px;border-radius:50%;background:#e4f5ec;color:var(--ok);display:grid;place-items:center;margin:0 auto 14px}
+section{padding:88px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+.head h2{font-size:clamp(30px,3.6vw,44px);max-width:640px}
+.head p{color:var(--muted);max-width:420px}
+.kicker{font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:10px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.ic{width:48px;height:48px;border-radius:calc(var(--r)*.75);background:var(--ink);color:var(--accent);display:grid;place-items:center;margin-bottom:18px}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:15px}
+.card .meta{margin-top:16px;font-size:13px;font-weight:700;color:var(--accent)}
+.band{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:44px;padding-bottom:44px}
+.band b{font-family:'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;font-size:42px;display:block;line-height:1;font-weight:800}
+.band span{color:var(--muted);font-size:14px}
+.panel{background:var(--ink2);color:#fff;border-radius:calc(var(--r) + 6px);padding:42px;display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+.panel>*{min-width:0}
+.panel h2{font-size:36px;margin:12px 0}
+.panel p{color:rgba(255,255,255,.72)}
+.inline-form{display:flex;gap:8px;margin-top:22px}
+.inline-form input{flex:1;min-width:0;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;border-radius:999px;padding:12px 18px;font:inherit}
+.inline-form input::placeholder{color:rgba(255,255,255,.5)}
+.timeline{background:var(--card);color:var(--ink);border-radius:var(--r);padding:24px}
+.tl-head{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:18px;gap:10px}
+.tl-head b{color:var(--ink);font-size:16px}
+.step{display:grid;grid-template-columns:22px 1fr auto;gap:12px;padding-bottom:18px;position:relative}
+.step:not(:last-child)::after{content:"";position:absolute;left:10px;top:22px;bottom:2px;width:2px;background:var(--line)}
+.step.d:not(:last-child)::after{background:var(--ok)}
+.dot{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);background:#fff;z-index:1}
+.d .dot{background:var(--ok);border-color:var(--ok)}
+.now .dot{border-color:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 25%,transparent)}
+.step b{display:block;font-size:15px}
+.step span,.step time{font-size:13px;color:var(--muted)}
+.tag{display:inline-block;font-size:11px;font-weight:700;background:var(--paper);color:var(--muted);padding:3px 8px;border-radius:6px;margin-left:6px;vertical-align:middle}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:10px 18px;font-weight:600;font-size:15px}
+.chip small{color:var(--muted);font-weight:500;margin-left:6px}
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.why div{border-top:3px solid var(--accent);padding-top:18px}
+.why h3{font-size:18px;margin-bottom:6px}
+.why p{color:var(--muted);font-size:15px}
+.listings{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.listing{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.listing .img{height:200px;position:relative;display:grid;place-items:center;color:rgba(255,255,255,.85)}
+.listing .img .badge{position:absolute;top:12px;left:12px;background:#fff;color:var(--ink);font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px}
+.listing .body{padding:18px}
+.listing h3{font-size:19px;margin-bottom:4px}
+.listing .loc{color:var(--muted);font-size:14px;display:flex;align-items:center;gap:6px}
+.listing .foot{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.listing .price{font-weight:800;color:var(--ink);font-size:17px}
+.steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+.steps4 div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;counter-increment:s}
+.steps4 div::before{content:counter(s,decimal-leading-zero);font-family:'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;font-size:28px;color:var(--accent);display:block;margin-bottom:10px;font-weight:800}
+.steps4 h3{font-size:17px;margin-bottom:6px}
+.steps4 p{color:var(--muted);font-size:14px}
+.quote{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.quote p{font-size:17px;margin-bottom:14px}
+.quote b{display:block}
+.quote span{color:var(--muted);font-size:14px}
+.hours{display:grid;grid-template-columns:1fr 1fr;gap:10px 30px;max-width:520px}
+.hours div{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding-bottom:8px}
+.emergency{background:#fdecec;border:1px solid #f6c9c9;color:#8a1c1c;border-radius:var(--r);padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-weight:600}
+.cta{background:var(--accent);color:var(--accent-ink);border-radius:calc(var(--r) + 6px);padding:48px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.cta h2{font-size:clamp(28px,3.4vw,40px);max-width:600px}
+footer{background:var(--ink);color:rgba(255,255,255,.65);padding:56px 0 28px;font-size:14px}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;margin-bottom:36px}
+footer h4{color:#fff;margin-bottom:12px;font-size:15px}
+footer li{list-style:none;margin-bottom:8px}
+footer .base{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px}
+.wa{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 25px rgba(0,0,0,.25);z-index:30}
+@media(max-width:900px){
+.links{display:none}
+.hero .wrap,.panel{grid-template-columns:1fr}
+.cards,.listings{grid-template-columns:1fr 1fr}
+.why,.band .wrap,.steps4{grid-template-columns:1fr 1fr}
+footer .grid{grid-template-columns:1fr 1fr}
+.panel{padding:26px}
+}
+@media(max-width:560px){
+.cards,.listings,.row2,.hours{grid-template-columns:1fr}
+.cta{padding:30px}
+.hero .wrap{padding-top:44px}
+.step{grid-template-columns:22px 1fr}
+.step time{grid-column:2}
+.nav-cta{display:none}
+section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+<div class="concept">Ferrn niche template demo. Brightpath Academy is a fictional business. · <a href="https://www.ferrnagency.com">ferrnagency.com</a></div>
+<nav class="top"><div class="wrap">
+  <a class="logo" href="#"><span class="logo-mark">BA</span>Brightpath Academy</a>
+  <div class="links"><a href="#services">Programmes</a><a href="#admissions">Admissions</a><a href="#day">School life</a><a href="#why">Why us</a><a href="#contact">Contact</a></div>
+  <a class="btn btn-accent nav-cta" href="#enquire">Start admission</a>
+</div></nav>
+<header class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow">Nursery · Primary · Secondary · Abuja</span>
+    <h1>Where curious children <em>become confident leaders.</em></h1>
+    <p class="lead">A British-Nigerian curriculum, small classes and teachers who know every child by name. Admissions are open for the new session.</p>
+    <div class="ctas"><a class="btn btn-accent" href="#enquire">Start admission →</a>
+    <a class="btn btn-line" href="#admissions">Book a school tour</a></div>
+    <div class="trust"><div><b>18</b>pupils per class</div><div><b>98%</b>WAEC credit pass</div><div><b>25+</b>clubs &amp; sports</div></div>
+  </div>
+  <div class="formcard" id="enquire"><form class="f" onsubmit="return done(this)"><h3>Admissions enquiry</h3><p class="sub">Book a tour or ask about places. Our admissions office replies within one working day.</p><div class="field"><label>Parent / guardian name</label><input placeholder="Your name"></div><div class="row2"><div class="field"><label>Class applying for</label><select><option>Creche</option><option>Nursery 1–2</option><option>Reception</option><option>Primary 1–3</option><option>Primary 4–6</option><option>JSS 1</option><option>SS 1</option></select></div><div class="field"><label>Session</label><select><option>This term</option><option>Next term</option><option>Next academic year</option></select></div></div><div class="field"><label>Your WhatsApp number</label><input type="tel" placeholder="080..."></div><button class="btn btn-accent" type="submit">Book a school tour</button><p class="note">No commitment. We reply fast.</p></form><div class="done"><div class="tick"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></div><h3>Request received</h3><p class="sub" style="margin-top:6px">On the live site this goes straight to Brightpath Academy's WhatsApp and inbox, so no enquiry gets lost.</p></div></div>
+</div></header>
+<section id="services"><div class="wrap"><div class="head"><div><span class="kicker">Programmes</span><h2>A complete journey from first steps to final exams.</h2></div><p>Each stage builds on the last, so children move up with confidence.</p></div><div class="cards"><div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M6 21c0-4 2.7-7 6-7s6 3 6 7"/></svg></div><h3>Creche &amp; Nursery</h3><p>Play-based learning in a safe, warm environment from 6 months.</p><div class="meta">Ages 6 months – 5</div></div><div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7a3 3 0 013 3v13a2 2 0 00-2-2H4zM20 4h-5a3 3 0 00-3 3"/><path d="M20 4v14h-6"/></svg></div><h3>Primary School</h3><p>Strong literacy and numeracy, plus science, coding and French.</p><div class="meta">Primary 1 – 6</div></div><div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6M16 4a3.5 3.5 0 010 7M18 14c2.5.5 4 2.8 4 6"/></svg></div><h3>Secondary School</h3><p>WAEC, NECO and IGCSE preparation with university guidance.</p><div class="meta">JSS 1 – SS 3</div></div><div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1"/><path d="M2 20h20"/></svg></div><h3>STEM &amp; Coding</h3><p>Robotics, coding and a modern computer lab for every class.</p><div class="meta">From Primary 3</div></div><div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 100 18c1 0 1.5-.8 1.5-1.5 0-1.5-1.5-1.5-1.5-3 0-1 .8-1.5 2-1.5h2a5 5 0 005-5c0-4-4-7-9-7z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7" r="1"/></svg></div><h3>Arts &amp; Music</h3><p>Drama, choir, visual arts and instruments taught by specialists.</p><div class="meta">All ages</div></div><div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="15" rx="2"/><path d="M4 11h16M8 21v-3M16 21v-3"/></svg></div><h3>School Bus</h3><p>Tracked buses covering major routes across Abuja.</p><div class="meta">Door to door</div></div></div></div></section>
+<div class="band"><div class="wrap"><div><b>18</b><span>Pupils per class</span></div><div><b>98%</b><span>WAEC credit pass rate</span></div><div><b>25+</b><span>Clubs and sports</span></div><div><b>12</b><span>Years of excellence</span></div></div></div>
+<section id="day"><div class="wrap"><div class="panel"><div><span class="eyebrow">School life</span><h2>A day at Brightpath Academy</h2><p>Structured learning, time to play, and clubs that help every child find what they love.</p></div><div class="timeline"><div class="step d"><div class="dot"></div><div><b>Arrival &amp; assembly</b></div><time>7:30am</time></div><div class="step d"><div class="dot"></div><div><b>Core lessons: literacy &amp; numeracy</b></div><time>8:00am</time></div><div class="step d"><div class="dot"></div><div><b>Break &amp; play</b></div><time>10:30am</time></div><div class="step d"><div class="dot"></div><div><b>Science, ICT &amp; creative arts</b></div><time>11:00am</time></div><div class="step d"><div class="dot"></div><div><b>Lunch</b></div><time>1:00pm</time></div><div class="step d"><div class="dot"></div><div><b>Clubs, sports &amp; music</b></div><time>2:00pm</time></div><div class="step d"><div class="dot"></div><div><b>Pick-up</b></div><time>3:30pm</time></div></div></div></div></section><section id="admissions" style="padding-top:0"><div class="wrap"><div class="head"><div><span class="kicker">Admissions</span><h2>Four simple steps to a place</h2></div><p>Admissions are open. Places in some classes are limited, so we recommend booking a tour early.</p></div><div class="steps4"><div><h3>Enquire</h3><p>Send the form or call our admissions office.</p></div><div><h3>Visit</h3><p>Tour the school and meet our teachers.</p></div><div><h3>Assessment</h3><p>A friendly, age-appropriate assessment.</p></div><div><h3>Offer</h3><p>Receive your offer and resumption pack.</p></div></div></div></section>
+<section id="coverage" style="padding-top:88px"><div class="wrap"><div class="head"><h2>Clubs and activities</h2><p></p></div><div class="chips"><span class="chip">Football</span><span class="chip">Swimming</span><span class="chip">Robotics</span><span class="chip">Debate</span><span class="chip">Chess</span><span class="chip">Choir</span><span class="chip">Drama</span><span class="chip">Coding</span><span class="chip">Taekwondo</span></div></div></section>
+<section id="why" style="padding-top:0"><div class="wrap"><div class="head"><h2>Why clients choose Brightpath Academy</h2></div><div class="why"><div><h3>Small classes</h3><p>No more than 18 pupils, so every child gets real attention.</p></div><div><h3>Qualified teachers</h3><p>Trained, vetted and continuously developed every term.</p></div><div><h3>Parents in the loop</h3><p>Weekly updates, termly reports and an open-door policy.</p></div><div><h3>Safe campus</h3><p>CCTV, controlled gates and a full-time nurse on site.</p></div></div></div></section>
+
+<section id="contact" style="padding-top:0"><div class="wrap"><div class="cta"><h2>Places fill quickly. Book your school tour today.</h2>
+<a class="btn btn-ink" href="#enquire">Start admission →</a></div></div></section>
+<footer><div class="wrap">
+  <div class="grid">
+    <div><a class="logo" href="#" style="color:#fff"><span class="logo-mark">BA</span>Brightpath Academy</a><p style="margin-top:14px;max-width:300px">Small classes. Big futures.</p></div>
+    <div><h4>Services</h4><ul><li>Creche &amp; Nursery</li><li>Primary School</li><li>Secondary School</li><li>STEM &amp; Coding</li><li>Arts &amp; Music</li></ul></div>
+    <div><h4>Contact</h4><ul><li>+234 800 000 0000</li><li>admissions@brightpath.example</li><li>Wuse II, Abuja</li></ul></div>
+    <div><h4>Hours</h4><ul><li>Mon – Fri: 7:30am – 4:00pm</li><li>Tours: Tue &amp; Thu, 10am</li></ul></div>
+  </div>
+  <div class="base"><span>© Brightpath Academy</span><span>Concept design by Ferrn Digital Agency</span></div>
+</div></footer>
+<a class="wa" href="#enquire" aria-label="Chat on WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.6-.1 1.3z"/></svg></a>
+<script>
+document.querySelectorAll('.seg').forEach(function(s){s.addEventListener('click',function(e){if(e.target.tagName!=='BUTTON')return;
+s.querySelectorAll('button').forEach(function(b){b.classList.remove('on')});e.target.classList.add('on');});});
+function done(f){var card=f.closest('.formcard')||f;var d=card.querySelector('.done');if(d){f.style.display='none';d.style.display='block';}
+else{f.innerHTML='<p style="padding:20px;text-align:center;font-weight:600">Request received. We\'ll confirm on WhatsApp.</p>';}return false;}
+</script></body>
+</html>

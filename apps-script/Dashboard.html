@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base target="_top">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ferrn Command Centre</title>
+<style>
+:root{
+  --ink:#0d1117; --ink2:#161b22; --line:#e6e4df; --paper:#f7f6f3; --card:#fff; --muted:#6b7280;
+  --brand:#ff4100; --brand-soft:#fff1eb; --ok:#16a34a; --ok-soft:#e9f7ee; --warn:#b45309; --warn-soft:#fff6e5;
+  --bad:#dc2626; --bad-soft:#fdecec; --blue:#2563eb; --blue-soft:#eaf1ff; --wa:#25d366;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--paper);color:var(--ink);font-size:14px;line-height:1.45}
+button{font:inherit;cursor:pointer}
+a{color:inherit}
+a.btn{text-decoration:none;display:inline-block}
+.top{background:var(--ink);color:#fff;position:sticky;top:0;z-index:30}
+.top-in{max-width:1280px;margin:0 auto;padding:0 18px;height:58px;display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.01em;font-size:16px;white-space:nowrap}
+.brand i{width:28px;height:28px;border-radius:7px;background:var(--brand);display:grid;place-items:center;font-style:normal;font-size:14px}
+.tabs{display:flex;gap:2px;overflow-x:auto;flex:1;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{background:none;border:0;color:#9ca3af;padding:8px 12px;border-radius:8px;font-weight:600;white-space:nowrap;position:relative}
+.tab:hover{color:#fff}
+.tab.on{color:#fff;background:rgba(255,255,255,.09)}
+.tab .n{background:var(--brand);color:#fff;border-radius:999px;font-size:11px;padding:1px 6px;margin-left:5px}
+.engine{display:flex;align-items:center;gap:8px;font-size:12px;color:#9ca3af;white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(22,163,74,.25)}
+.dot.off{background:#9ca3af;box-shadow:none}
+main{max-width:1280px;margin:0 auto;padding:22px 18px 80px}
+.kpis{display:grid;grid-template-columns:2fr repeat(5,1fr);gap:12px;margin-bottom:20px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.kpi b{display:block;font-size:24px;font-weight:800;letter-spacing:-.02em}
+.kpi span{color:var(--muted);font-size:12px}
+.target b{font-size:22px}
+.bar{height:8px;border-radius:99px;background:#f0eeea;margin:10px 0 6px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--brand),#ff8a3d);border-radius:99px}
+.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:18px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:18px;overflow:hidden}
+.ph{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.ph h2{font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px}
+.ph small{color:var(--muted);font-weight:500}
+.empty{padding:26px 16px;color:var(--muted);text-align:center}
+.item{padding:14px 16px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}
+.item:last-child{border-bottom:0}
+.item h3{font-size:14px;font-weight:700;margin-bottom:2px;cursor:pointer}
+.item h3:hover{color:var(--brand)}
+.item p{color:var(--muted);font-size:13px}
+.item .why{color:var(--ink);background:var(--warn-soft);border-radius:8px;padding:7px 10px;margin-top:8px;font-size:13px}
+.preview-txt{color:var(--ink);font-size:13px;margin-top:6px;white-space:pre-wrap;max-height:4.4em;overflow:hidden}
+.acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 11px;font-weight:600;font-size:12.5px;white-space:nowrap}
+.btn:hover{border-color:#c9c6bf}
+.btn.pri{background:var(--brand);border-color:var(--brand);color:#fff}
+.btn.dark{background:var(--ink);border-color:var(--ink);color:#fff}
+.btn.wa{background:var(--wa);border-color:var(--wa);color:#fff}
+.btn.ghost{border-color:transparent;color:var(--muted)}
+.pill{display:inline-block;font-size:11px;font-weight:700;border-radius:999px;padding:2px 8px;background:#f1f0ec;color:#4b5563;white-space:nowrap}
+.pill.A{background:var(--bad-soft);color:var(--bad)}
+.pill.B{background:var(--warn-soft);color:var(--warn)}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.blue{background:var(--blue-soft);color:var(--blue)}
+.pill.brand{background:var(--brand-soft);color:var(--brand)}
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;align-items:center}
+.when{font-size:12px;color:var(--muted);white-space:nowrap}
+/* pipeline */
+.kanban{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(230px,1fr);gap:12px;overflow-x:auto;padding-bottom:10px}
+.col{background:#efede8;border-radius:14px;padding:10px;min-height:200px}
+.col h4{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);display:flex;justify-content:space-between;margin:4px 4px 10px}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 11px;margin-bottom:8px;cursor:pointer}
+.card:hover{border-color:var(--brand)}
+.card b{display:block;font-size:13px}
+.card span{font-size:12px;color:var(--muted)}
+/* table */
+.tools{display:flex;gap:8px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--line)}
+input,select,textarea{font:inherit;border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--brand);border-color:transparent}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);padding:10px 14px;border-bottom:1px solid var(--line);background:#fbfaf8;white-space:nowrap}
+td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr.click{cursor:pointer}
+tr.click:hover td{background:#fbfaf8}
+/* previews */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;padding:16px}
+.shot{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.shot .frame{height:170px;overflow:hidden;position:relative;background:#f3f2ee}
+.shot iframe{width:1280px;height:850px;border:0;transform:scale(.2);transform-origin:0 0;pointer-events:none}
+.shot .cap{padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+/* drawer */
+.scrim{position:fixed;inset:0;background:rgba(13,17,23,.45);z-index:40;display:none}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(560px,100%);background:#fff;z-index:50;transform:translateX(100%);transition:transform .2s;display:flex;flex-direction:column}
+.drawer.open{transform:none}
+.scrim.open{display:block}
+.dh{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}
+.dh h2{font-size:18px}
+.db{padding:18px 20px;overflow-y:auto;flex:1}
+.kv{display:grid;grid-template-columns:120px 1fr;gap:6px 12px;font-size:13px;margin-bottom:16px}
+.kv dt{color:var(--muted)}
+.db h4{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:18px 0 8px}
+.msg{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px;font-size:13px}
+.msg.in{background:var(--blue-soft);border-color:#d6e3ff}
+.msg pre{white-space:pre-wrap;font-family:inherit;margin-top:6px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+textarea{width:100%;min-height:150px;resize:vertical}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;z-index:60;display:none;font-weight:600}
+.settings{padding:16px;display:grid;gap:14px;max-width:640px}
+.set{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid var(--line);padding-bottom:14px}
+.set p{color:var(--muted);font-size:13px}
+.switch{width:46px;height:26px;border-radius:99px;background:#d1d5db;border:0;position:relative;flex:none}
+.switch::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:left .15s}
+.switch.on{background:var(--ok)}
+.switch.on::after{left:23px}
+.loading{padding:60px;text-align:center;color:var(--muted)}
+.demo{background:var(--warn-soft);color:var(--warn);text-align:center;font-size:12px;font-weight:600;padding:6px}
+@media(max-width:1000px){
+  .kpis{grid-template-columns:repeat(3,1fr)} .target{grid-column:1/-1}
+  .grid2{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .kpis{grid-template-columns:1fr 1fr}
+  .item{grid-template-columns:1fr}
+  .acts{justify-content:flex-start}
+  .engine span{display:none}
+  .top-in{gap:10px}
+  .brand b{display:none}
+}
+</style>
+</head>
+<body>
+<div id="demo" class="demo" style="display:none">Demo data. Deploy inside Google Apps Script to see your real pipeline.</div>
+<div class="top"><div class="top-in">
+  <div class="brand"><i>F</i><b>Ferrn Command Centre</b></div>
+  <nav class="tabs" id="tabs"></nav>
+  <div class="engine"><div class="dot" id="engDot"></div><span id="engTxt">Engine on</span></div>
+</div></div>
+<main id="app"><div class="loading">Loading your pipeline…</div></main>
+
+<div class="scrim" id="scrim" onclick="closeDrawer()"></div>
+<aside class="drawer" id="drawer"><div class="dh"><div><h2 id="dTitle"></h2><div id="dSub" class="meta"></div></div><button class="btn ghost" onclick="closeDrawer()">Close ✕</button></div><div class="db" id="dBody"></div></aside>
+<div class="toast" id="toast"></div>
+
+<script>
+var D = null, TAB = 'today', FILTER = { q: '', status: '', niche: '' };
+var STATUSES = ['New','Preview ready','Queued','WhatsApp ready','Contacted','Following up','Replied','Interested','Call booked','Proposal sent','Won','Lost','No reply','Opted out','Bounced'];
+var PIPE = ['Queued','WhatsApp ready','Contacted','Following up','Replied','Interested','Call booked','Proposal sent','Won'];
+var NICHE = { logistics:'Logistics', realestate:'Real estate', school:'School', clinic:'Clinic' };
+
+// ── server bridge: inside Apps Script → google.script.run; hosted (Cloudflare) → your engine's API; else demo ──
+var GAS = typeof google !== 'undefined' && google.script && google.script.run;
+function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { return null; } }
+var API = { url: store('ferrn_api_url') || '', key: store('ferrn_api_key') || '' };
+var LIVE = GAS || !!(API.url && API.key);
+function call(fn, args, cb) {
+  if (GAS) {
+    var r = google.script.run.withSuccessHandler(cb).withFailureHandler(function (e) { toast('⚠ ' + (e.message || e)); });
+    r[fn].apply(r, args || []);
+    return;
+  }
+  if (!LIVE) { cb(DEMO_CALL(fn, args)); return; }
+  fetch(API.url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ key: API.key, fn: fn, args: args || [] }) })
+    .then(function (r) { return r.json(); })
+    .then(function (res) {
+      if (res.ok) cb(res.data);
+      else { toast('⚠ ' + res.error); if (/access key/i.test(res.error)) showConnect(res.error); }
+    })
+    .catch(function (e) { toast('⚠ Could not reach your engine. Check the connection in Settings.'); });
+}
+function showConnect(err) {
+  document.getElementById('scrim').classList.add('open');
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('dTitle').textContent = 'Connect your engine';
+  document.getElementById('dSub').innerHTML = '';
+  document.getElementById('dBody').innerHTML = (err ? '<div class="why" style="background:var(--bad-soft);color:var(--bad);border-radius:8px;padding:10px;margin-bottom:14px">' + esc(err) + '</div>' : '') +
+    '<p style="color:var(--muted);margin-bottom:14px">Paste the two values from your Google setup. They are saved only in this browser.</p>' +
+    '<label class="when">Engine URL (Apps Script → Deploy → Web app URL)</label><input id="cUrl" style="width:100%;margin:4px 0 14px" placeholder="https://script.google.com/macros/s/…/exec" value="' + esc(API.url) + '">' +
+    '<label class="when">Access key (sheet → Settings tab → API_KEY)</label><input id="cKey" type="password" style="width:100%;margin:4px 0 14px" placeholder="fk_…" value="' + esc(API.key) + '">' +
+    '<div class="row"><button class="btn pri" onclick="saveConnect()">Connect</button>' + (API.url ? '<button class="btn ghost" onclick="disconnect()">Disconnect this browser</button>' : '') + '</div>';
+}
+function saveConnect() {
+  var u = document.getElementById('cUrl').value.trim(), k = document.getElementById('cKey').value.trim();
+  if (!/^https:\/\/script\.google(usercontent)?\.com\//.test(u)) { toast('That doesn\'t look like an Apps Script web app URL'); return; }
+  store('ferrn_api_url', u); store('ferrn_api_key', k);
+  API = { url: u, key: k }; LIVE = true;
+  document.getElementById('demo').style.display = 'none';
+  closeDrawer(); toast('Connecting…'); load();
+}
+function disconnect() { store('ferrn_api_url', null); store('ferrn_api_key', null); location.reload(); }
+function act(action, p, msg) {
+  call('dashAction', [action, p || {}], function (d) { D = d; render(); if (msg) toast(msg); });
+}
+function load() { call('getDashboardData', [], function (d) { D = d; render(); }); }
+
+// ── helpers ──
+function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+function naira(n) { n = Number(n || 0); if (n >= 1e6) return '₦' + (n / 1e6).toFixed(n % 1e6 ? 1 : 0) + 'M'; if (n >= 1e3) return '₦' + Math.round(n / 1e3) + 'k'; return '₦' + n; }
+function ago(iso) {
+  if (!iso) return '';
+  var s = (Date.now() - new Date(iso)) / 1000, f = s < 0;
+  s = Math.abs(s);
+  var t = s < 60 ? 'now' : s < 3600 ? Math.round(s / 60) + 'm' : s < 86400 ? Math.round(s / 3600) + 'h' : Math.round(s / 86400) + 'd';
+  return t === 'now' ? 'now' : (f ? 'in ' + t : t + ' ago');
+}
+function stepName(s) { return s === '0' ? 'First message' : s === 'R' ? 'Reply' : 'Follow-up ' + s; }
+function tierPill(t) { return t ? '<span class="pill ' + esc(t) + '">Tier ' + esc(t) + '</span>' : ''; }
+function statusPill(s) {
+  var c = ['Won','Interested','Call booked','Proposal sent'].indexOf(s) > -1 ? 'ok' : ['Replied'].indexOf(s) > -1 ? 'brand' : ['Contacted','Following up','Queued'].indexOf(s) > -1 ? 'blue' : '';
+  return '<span class="pill ' + c + '">' + esc(s) + '</span>';
+}
+function toast(t) { var el = document.getElementById('toast'); el.textContent = t; el.style.display = 'block'; clearTimeout(el._t); el._t = setTimeout(function () { el.style.display = 'none'; }, 2600); }
+
+// ── render ──
+function render() {
+  var needs = D.needsYou.length + D.held.length + D.inbox.filter(function (i) { return i.status === 'new'; }).length;
+  var tabs = [['today', 'Today', needs], ['pipeline', 'Pipeline'], ['leads', 'Leads'], ['inbox', 'Conversations'], ['previews', 'Previews'], ['settings', 'Settings']];
+  document.getElementById('tabs').innerHTML = tabs.map(function (t) {
+    return '<button class="tab ' + (TAB === t[0] ? 'on' : '') + '" onclick="go(\'' + t[0] + '\')">' + t[1] + (t[2] ? '<span class="n">' + t[2] + '</span>' : '') + '</button>';
+  }).join('');
+  document.getElementById('engDot').className = 'dot' + (D.settings.AUTO_SEND ? '' : ' off');
+  document.getElementById('engTxt').textContent = D.settings.AUTO_SEND ? 'Auto-sending on' : 'Auto-send paused';
+  var html = kpis();
+  html += ({ today: viewToday, pipeline: viewPipeline, leads: viewLeads, inbox: viewInbox, previews: viewPreviews, settings: viewSettings })[TAB]();
+  document.getElementById('app').innerHTML = html;
+}
+function go(t) { TAB = t; render(); window.scrollTo(0, 0); }
+
+function kpis() {
+  var k = D.kpis, tgt = D.settings.MONTHLY_TARGET || 30000000, pct = Math.min(100, k.wonMonth / tgt * 100);
+  var day = new Date().getDate(), need = Math.max(0, tgt - k.wonMonth);
+  return '<div class="kpis">' +
+    '<div class="kpi target"><span>Won this month vs ' + naira(tgt) + ' target</span><b>' + naira(k.wonMonth) + ' <small style="font-size:13px;color:var(--muted);font-weight:600">(' + pct.toFixed(0) + '%)</small></b><div class="bar"><i style="width:' + pct + '%"></i></div><span>' + naira(need) + ' to go · ' + naira(k.pipelineValue) + ' in active deals</span></div>' +
+    kpi(k.leads, 'Leads found') + kpi(k.contacted, 'Contacted') + kpi(k.replied, 'Replied') + kpi(k.calls, 'Calls / proposals') + kpi(k.sentToday, 'Sent today') + '</div>';
+}
+function kpi(v, l) { return '<div class="kpi"><b>' + v + '</b><span>' + l + '</span></div>'; }
+
+function viewToday() {
+  var newIn = D.inbox.filter(function (i) { return i.status === 'new'; });
+  var left = panel('🔥 Needs you', D.needsYou.length + D.held.length, 'Calls, meetings, pricing and anything the AI won\'t answer alone',
+    D.needsYou.map(needItem).join('') + D.held.map(heldItem).join(''), 'Nothing needs you right now. The system is working.');
+  left += panel('💬 New replies', newIn.length, 'The AI answers routine ones at the next reply check (12pm & 4pm)',
+    newIn.map(replyItem).join(''), 'No new replies yet.');
+  left += panel('🟢 WhatsApp to send', D.whatsapp.length, 'One tap opens WhatsApp with the message ready',
+    D.whatsapp.map(waItem).join(''), 'No WhatsApp messages due.');
+  var right = panel('⏱ Sending soon', D.sendingSoon.length, D.settings.AUTO_SEND ? 'Goes out automatically. Hold anything that looks off.' : 'Auto-send is paused: press Send to release',
+    D.sendingSoon.map(soonItem).join(''), 'Queue is empty. New leads arrive after the morning run.');
+  right += panel('✉️ Recently sent', '', '', D.recentSent.slice(0, 12).map(sentItem).join(''), 'Nothing sent yet.');
+  return '<div class="grid2"><div>' + left + '</div><div>' + right + '</div></div>';
+}
+function panel(title, n, sub, body, empty) {
+  return '<section class="panel"><div class="ph"><h2>' + title + (n !== '' && n != null ? ' <span class="pill">' + n + '</span>' : '') + '</h2>' + (sub ? '<small>' + sub + '</small>' : '') + '</div>' + (body || '<div class="empty">' + empty + '</div>') + '</section>';
+}
+function leadLink(id, name) { return '<h3 onclick="openLead(\'' + id + '\')">' + esc(name) + '</h3>'; }
+function needItem(l) {
+  return '<div class="item"><div>' + leadLink(l.id, l.company) + '<div class="meta">' + statusPill(l.status) + tierPill(l.tier) + '<span class="pill">' + esc(NICHE[l.niche] || l.niche || '') + '</span>' + (l.est_value ? '<span class="pill ok">' + naira(l.est_value) + '</span>' : '') + '</div>' +
+    '<div class="why">' + esc(l.needs_you_reason || 'Needs your input') + '</div></div>' +
+    '<div class="acts"><button class="btn dark" onclick="openLead(\'' + l.id + '\')">Open</button>' +
+    (l.phone ? '<a class="btn wa" target="_blank" href="https://wa.me/' + waNum(l.phone) + '">WhatsApp</a>' : '') +
+    '<button class="btn" onclick="act(\'resolve\',{lead_id:\'' + l.id + '\'},\'Marked done\')">Done ✓</button></div></div>';
+}
+function heldItem(m) {
+  return '<div class="item"><div>' + leadLink(m.lead_id, m.company) + '<div class="meta"><span class="pill brand">Waiting for your OK</span><span class="pill">' + stepName(m.step) + '</span></div>' +
+    '<div class="preview-txt">' + esc(m.body) + '</div></div><div class="acts"><button class="btn pri" onclick="act(\'sendNow\',{id:\'' + m.id + '\'},\'Sent ✓\')">Send</button><button class="btn" onclick="editMsg(\'' + m.id + '\')">Edit</button><button class="btn ghost" onclick="act(\'cancel\',{id:\'' + m.id + '\'},\'Cancelled\')">Discard</button></div></div>';
+}
+function replyItem(i) {
+  return '<div class="item"><div>' + leadLink(i.lead_id, i.company) + '<p>' + esc(i.from) + ' · ' + ago(i.received_at) + '</p><div class="preview-txt">' + esc(i.body) + '</div></div>' +
+    '<div class="acts"><button class="btn dark" onclick="openLead(\'' + i.lead_id + '\')">Read</button><button class="btn ghost" onclick="act(\'markInbox\',{id:\'' + i.id + '\'},\'Marked handled\')">I\'ll handle it</button></div></div>';
+}
+function waItem(m) {
+  return '<div class="item"><div>' + leadLink(m.lead_id, m.company) + '<div class="meta"><span class="pill">' + stepName(m.step) + '</span><span class="when">' + esc(m.to) + '</span></div><div class="preview-txt">' + esc(m.body) + '</div></div>' +
+    '<div class="acts"><a class="btn wa" target="_blank" href="' + esc(m.wa_link) + '" onclick="setTimeout(function(){confirmWa(\'' + m.id + '\')},400)">Open WhatsApp</a><button class="btn" onclick="act(\'waSent\',{id:\'' + m.id + '\'},\'Logged as sent ✓\')">Mark sent</button></div></div>';
+}
+function confirmWa(id) { if (confirm('Did you send it on WhatsApp? Press OK to log it and schedule the follow-up.')) act('waSent', { id: id }, 'Logged as sent ✓'); }
+function soonItem(m) {
+  return '<div class="item"><div>' + leadLink(m.lead_id, m.company) + '<div class="meta"><span class="pill blue">' + stepName(m.step) + '</span><span class="when">' + (m.send_at ? 'sends ' + ago(m.send_at) : '') + '</span></div><div class="preview-txt">' + esc(m.subject ? m.subject + ' — ' : '') + esc(m.body) + '</div></div>' +
+    '<div class="acts"><button class="btn" onclick="act(\'hold\',{id:\'' + m.id + '\'},\'Held. It\\\'s in Needs you.\')">Hold</button><button class="btn" onclick="editMsg(\'' + m.id + '\')">Edit</button><button class="btn pri" onclick="act(\'sendNow\',{id:\'' + m.id + '\'},\'Sent ✓\')">Send now</button></div></div>';
+}
+function sentItem(m) {
+  var bad = m.status === 'failed';
+  return '<div class="item"><div>' + leadLink(m.lead_id, m.company) + '<p>' + stepName(m.step) + ' · ' + (m.channel === 'whatsapp' ? 'WhatsApp' : 'Email') + (bad ? ' · <b style="color:var(--bad)">Failed: ' + esc(m.error) + '</b>' : '') + '</p></div><span class="when">' + ago(m.sent_at) + '</span></div>';
+}
+function waNum(p) { var d = String(p || '').replace(/\D/g, ''); if (d.charAt(0) === '0' && d.length === 11) d = '234' + d.slice(1); return d; }
+
+function viewPipeline() {
+  var cols = PIPE.map(function (s) {
+    var ls = D.leads.filter(function (l) { return l.status === s; });
+    var val = ls.reduce(function (a, l) { return a + (l.est_value || 0); }, 0);
+    return '<div class="col"><h4><span>' + s + ' · ' + ls.length + '</span><span>' + (val ? naira(val) : '') + '</span></h4>' +
+      ls.slice(0, 40).map(function (l) { return '<div class="card" onclick="openLead(\'' + l.id + '\')"><b>' + esc(l.company) + '</b><span>' + esc(NICHE[l.niche] || l.niche || '') + (l.city ? ' · ' + esc(l.city) : '') + (l.est_value ? ' · ' + naira(l.est_value) : '') + '</span>' + (l.needs_you === 'Y' ? '<div style="margin-top:6px"><span class="pill brand">Needs you</span></div>' : '') + '</div>'; }).join('') + '</div>';
+  }).join('');
+  return '<section class="panel" style="padding:14px;background:transparent;border:0"><div class="kanban">' + cols + '</div></section>';
+}
+
+function viewLeads() {
+  var q = FILTER.q.toLowerCase();
+  var rows = D.leads.filter(function (l) {
+    return (!FILTER.status || l.status === FILTER.status) && (!FILTER.niche || l.niche === FILTER.niche) &&
+      (!q || (l.company + ' ' + l.email + ' ' + l.city + ' ' + l.phone).toLowerCase().indexOf(q) > -1);
+  });
+  return '<section class="panel"><div class="tools"><input placeholder="Search company, email, city…" value="' + esc(FILTER.q) + '" oninput="FILTER.q=this.value;debounce()" style="flex:1;min-width:200px">' +
+    '<select onchange="FILTER.status=this.value;render()"><option value="">All statuses</option>' + STATUSES.map(function (s) { return '<option' + (FILTER.status === s ? ' selected' : '') + '>' + s + '</option>'; }).join('') + '</select>' +
+    '<select onchange="FILTER.niche=this.value;render()"><option value="">All niches</option>' + Object.keys(NICHE).map(function (n) { return '<option value="' + n + '"' + (FILTER.niche === n ? ' selected' : '') + '>' + NICHE[n] + '</option>'; }).join('') + '</select></div>' +
+    '<div class="tw"><table><thead><tr><th>Company</th><th>Niche</th><th>Status</th><th>Tier</th><th>Value</th><th>Last contact</th><th>Next</th></tr></thead><tbody>' +
+    (rows.map(function (l) {
+      return '<tr class="click" onclick="openLead(\'' + l.id + '\')"><td><b>' + esc(l.company) + '</b><br><span class="when">' + esc(l.email || l.phone || '') + '</span></td><td>' + esc(NICHE[l.niche] || l.niche || '') + '<br><span class="when">' + esc(l.city || '') + '</span></td><td>' + statusPill(l.status) + '</td><td>' + tierPill(l.tier) + '</td><td>' + (l.est_value ? naira(l.est_value) : '') + '</td><td class="when">' + ago(l.last_contact) + '</td><td style="max-width:260px;color:var(--muted)">' + esc(l.next_action || '') + '</td></tr>';
+    }).join('') || '<tr><td colspan="7" class="empty">No leads match.</td></tr>') + '</tbody></table></div></section>';
+}
+var _db; function debounce() { clearTimeout(_db); _db = setTimeout(function () { var el = document.activeElement, pos = el && el.selectionStart; render(); var i = document.querySelector('.tools input'); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (e) {} } }, 250); }
+
+function viewInbox() {
+  return panel('Conversations', D.inbox.length, 'Every reply from a lead, newest first', D.inbox.map(function (i) {
+    return '<div class="item"><div>' + leadLink(i.lead_id, i.company) + '<p>' + esc(i.from) + ' · ' + ago(i.received_at) + '</p><div class="preview-txt">' + esc(i.body) + '</div></div><div class="acts">' +
+      (i.status === 'new' ? '<span class="pill brand">New</span>' : '<span class="pill">' + esc(i.classification || 'handled') + '</span>') + '</div></div>';
+  }).join(''), 'No replies yet. They\'ll show here the minute they land in Gmail.');
+}
+
+function viewPreviews() {
+  var ps = D.leads.filter(function (l) { return l.preview_url; });
+  if (!ps.length) return panel('Preview websites', 0, '', '', 'No previews yet. The morning run builds ' + 'them for the best leads.');
+  return '<section class="panel"><div class="ph"><h2>Preview websites <span class="pill">' + ps.length + '</span></h2><small>Built from your niche templates</small></div><div class="gallery">' +
+    ps.map(function (l) {
+      return '<div class="shot"><div class="frame"><iframe loading="lazy" src="' + esc(l.preview_url) + '"></iframe></div><div class="cap"><div><b style="font-size:13px">' + esc(l.company) + '</b><br><span class="when">' + esc(NICHE[l.niche] || '') + ' · ' + esc(l.status) + '</span></div><a class="btn" target="_blank" href="' + esc(l.preview_url) + '">Open ↗</a></div></div>';
+    }).join('') + '</div></section>';
+}
+
+function viewSettings() {
+  var s = D.settings;
+  return '<section class="panel"><div class="ph"><h2>Settings</h2><small>Everything else lives in the Settings tab of your sheet</small></div><div class="settings">' +
+    '<div class="set"><div><b>Auto-send</b><p>Send queued emails and follow-ups on their own, ' + esc(s.SEND_START_HOUR) + ':00–' + esc(s.SEND_END_HOUR) + ':59 on weekdays.</p></div><button class="switch ' + (s.AUTO_SEND ? 'on' : '') + '" onclick="act(\'setSetting\',{key:\'AUTO_SEND\',value:' + (s.AUTO_SEND ? '\'FALSE\'' : '\'TRUE\'') + '},\'Saved\')"></button></div>' +
+    num('HOLD_MINUTES', 'Safety hold (minutes)', 'New first emails wait this long so you can stop them. 0 = no wait.', s.HOLD_MINUTES) +
+    num('DAILY_CAP_FIRST', 'New emails per day', 'Keep under 30 to protect your domain from spam folders.', s.DAILY_CAP_FIRST) +
+    num('DAILY_CAP_TOTAL', 'All emails per day', 'First emails + follow-ups + replies.', s.DAILY_CAP_TOTAL) +
+    num('MONTHLY_TARGET', 'Monthly target (₦)', '', s.MONTHLY_TARGET) +
+    '<div class="set"><div><b>Preview site address</b><p>Where your Netlify previews are live.</p></div><input id="s_PREVIEW_BASE_URL" value="' + esc(s.PREVIEW_BASE_URL || '') + '" placeholder="https://previews.ferrnagency.com" style="width:240px" onchange="act(\'setSetting\',{key:\'PREVIEW_BASE_URL\',value:this.value},\'Saved\')"></div>' +
+    '<div class="set"><div><b>Sending from</b><p>' + esc(s.FROM_ALIAS || 'this Google account') + '</p></div></div>' +
+    '<div class="row"><button class="btn dark" onclick="act(\'runNow\',{},\'Engine ran ✓\')">Run engine now</button>' + (!GAS ? '<button class="btn" onclick="showConnect()">Engine connection</button>' : '') + (s.sheet_url ? '<a class="btn" target="_blank" href="' + esc(s.sheet_url) + '">Open the sheet ↗</a>' : '') + '</div>' +
+    '<div><h4 style="font-size:12px;text-transform:uppercase;color:var(--muted);margin:10px 0 8px">Engine log</h4>' +
+    (D.logs || []).map(function (l) { return '<div style="font-size:12px;padding:6px 0;border-bottom:1px solid var(--line)"><span class="when">' + ago(l.time) + '</span> <b style="color:' + (l.level === 'error' ? 'var(--bad)' : 'inherit') + '">' + esc(l.event) + '</b> ' + esc(l.detail) + '</div>'; }).join('') + '</div>' +
+    '</div></section>';
+}
+function num(k, label, help, v) {
+  return '<div class="set"><div><b>' + label + '</b><p>' + help + '</p></div><input type="number" value="' + esc(v) + '" style="width:120px" onchange="act(\'setSetting\',{key:\'' + k + '\',value:this.value},\'Saved\')"></div>';
+}
+
+// ── lead drawer ──
+function openLead(id) {
+  document.getElementById('scrim').classList.add('open');
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('dTitle').textContent = 'Loading…';
+  document.getElementById('dBody').innerHTML = '';
+  call('getLeadDetail', [id], function (d) { if (d) drawLead(d); });
+}
+function closeDrawer() { document.getElementById('scrim').classList.remove('open'); document.getElementById('drawer').classList.remove('open'); }
+function drawLead(d) {
+  var l = d.lead;
+  document.getElementById('dTitle').textContent = l.company;
+  document.getElementById('dSub').innerHTML = statusPill(l.status) + tierPill(l.tier) + '<span class="pill">' + esc(NICHE[l.niche] || l.niche || '') + '</span>';
+  var kv = [['Contact', [l.contact_name, l.role].filter(Boolean).join(', ')], ['Email', l.email], ['Phone', l.phone], ['Website', l.website ? '<a target="_blank" href="' + esc(/^http/.test(l.website) ? l.website : 'https://' + l.website) + '">' + esc(l.website) + '</a>' : ''],
+    ['City', l.city], ['Est. value', l.est_value ? naira(l.est_value) : ''], ['Gaps found', l.gaps], ['Pitch', l.pitch],
+    ['Preview', l.preview_url ? '<a target="_blank" href="' + esc(l.preview_url) + '">Open preview ↗</a>' : ''], ['Next', l.next_action]];
+  var h = '<dl class="kv">' + kv.filter(function (x) { return x[1]; }).map(function (x) { return '<dt>' + x[0] + '</dt><dd>' + (/^<a/.test(x[1]) ? x[1] : esc(x[1])) + '</dd>'; }).join('') + '</dl>';
+  if (l.needs_you === 'Y') h += '<div class="why" style="background:var(--warn-soft);border-radius:8px;padding:10px;margin-bottom:12px"><b>Needs you:</b> ' + esc(l.needs_you_reason) + '</div>';
+  h += '<div class="row"><select id="stSel">' + STATUSES.map(function (s) { return '<option' + (s === l.status ? ' selected' : '') + '>' + s + '</option>'; }).join('') + '</select>' +
+    '<input id="stVal" type="number" placeholder="Deal value ₦" value="' + esc(l.est_value || '') + '" style="width:140px">' +
+    '<button class="btn dark" onclick="act(\'setStatus\',{lead_id:\'' + l.id + '\',status:document.getElementById(\'stSel\').value,est_value:document.getElementById(\'stVal\').value},\'Updated\');closeDrawer()">Update</button>' +
+    (l.phone ? '<a class="btn wa" target="_blank" href="https://wa.me/' + waNum(l.phone) + '">WhatsApp</a>' : '') + '</div>';
+  var timeline = d.messages.map(function (m) { return { t: m.sent_at || m.send_after || '', html: msgCard(m) }; })
+    .concat(d.inbox.map(function (i) { return { t: i.received_at, html: '<div class="msg in"><b>' + esc(i.from) + '</b> <span class="when">' + ago(i.received_at) + '</span><pre>' + esc(i.body) + '</pre></div>' }; }))
+    .sort(function (a, b) { return String(a.t || '9').localeCompare(String(b.t || '9')); });
+  h += '<h4>Conversation</h4>' + (timeline.map(function (x) { return x.html; }).join('') || '<p class="when">No messages yet.</p>');
+  h += '<h4>Notes</h4><pre style="white-space:pre-wrap;font-family:inherit;font-size:13px;color:var(--muted);margin-bottom:8px">' + esc(l.notes || '') + '</pre><div class="row"><input id="noteIn" placeholder="Add a note…" style="flex:1"><button class="btn" onclick="act(\'note\',{lead_id:\'' + l.id + '\',note:document.getElementById(\'noteIn\').value},\'Note saved\');openLead(\'' + l.id + '\')">Save</button></div>';
+  document.getElementById('dBody').innerHTML = h;
+}
+function msgCard(m) {
+  var st = { queued: 'Scheduled', held: 'Waiting for OK', sent: 'Sent', cancelled: 'Cancelled', failed: 'Failed', wa_pending: 'WhatsApp ready', wa_sent: 'Sent on WhatsApp' }[m.status] || m.status;
+  var acts = '';
+  if (['queued', 'held'].indexOf(m.status) > -1 && m.channel === 'email') acts = '<div class="row" style="margin-top:8px"><button class="btn pri" onclick="act(\'sendNow\',{id:\'' + m.id + '\'},\'Sent ✓\')">Send now</button><button class="btn" onclick="editMsg(\'' + m.id + '\')">Edit</button><button class="btn ghost" onclick="act(\'cancel\',{id:\'' + m.id + '\'},\'Cancelled\')">Cancel</button></div>';
+  if (m.status === 'wa_pending') acts = '<div class="row" style="margin-top:8px"><a class="btn wa" target="_blank" href="' + esc(m.wa_link) + '">Open WhatsApp</a><button class="btn" onclick="act(\'waSent\',{id:\'' + m.id + '\'},\'Logged ✓\')">Mark sent</button></div>';
+  return '<div class="msg"><b>' + stepName(m.step) + '</b> · ' + (m.channel === 'whatsapp' ? 'WhatsApp' : 'Email') + ' · <span class="when">' + st + ' ' + ago(m.sent_at || m.send_after) + '</span>' + (m.error && m.status !== 'sent' ? ' <span class="when">(' + esc(m.error) + ')</span>' : '') + (m.subject ? '<div style="margin-top:4px"><b>' + esc(m.subject) + '</b></div>' : '') + '<pre>' + esc(m.body) + '</pre>' + acts + '</div>';
+}
+function findMsg(id) {
+  var all = [].concat(D.held, D.sendingSoon, D.whatsapp);
+  for (var i = 0; i < all.length; i++) if (all[i].id === id) return all[i];
+  return null;
+}
+function editMsg(id) {
+  var m = findMsg(id) || { id: id, subject: '', body: '' };
+  document.getElementById('scrim').classList.add('open');
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('dTitle').textContent = 'Edit message';
+  document.getElementById('dSub').innerHTML = '<span class="pill">' + esc(m.company || '') + '</span>';
+  document.getElementById('dBody').innerHTML = (m.channel !== 'whatsapp' ? '<label class="when">Subject</label><input id="eSub" style="width:100%;margin:4px 0 12px" value="' + esc(m.subject || '') + '">' : '') +
+    '<label class="when">Message</label><textarea id="eBody" style="margin-top:4px;min-height:260px">' + esc(m.body || '') + '</textarea>' +
+    '<div class="row" style="margin-top:12px"><button class="btn dark" onclick="saveEdit(\'' + id + '\')">Save</button><button class="btn ghost" onclick="closeDrawer()">Cancel</button></div>';
+}
+function saveEdit(id) {
+  var s = document.getElementById('eSub');
+  act('edit', { id: id, subject: s ? s.value : undefined, body: document.getElementById('eBody').value }, 'Saved');
+  closeDrawer();
+}
+
+// auto refresh every 2 minutes
+setInterval(function () { if (!document.getElementById('drawer').classList.contains('open')) load(); }, 120000);
+
+// ── demo data (only used when opened outside Apps Script) ──
+function DEMO_CALL(fn, args) {
+  if (fn === 'getLeadDetail') {
+    var l = DEMO.leads.filter(function (x) { return x.id === args[0]; })[0] || DEMO.leads[0];
+    return { lead: l, messages: [
+      { id: 'm1', step: '0', channel: 'email', subject: l.company + ': quick idea', body: 'Hi ' + (l.contact_name || 'there') + ',\n\nI noticed your website has no way to request a quote online...', status: 'sent', sent_at: new Date(Date.now() - 4 * 864e5).toISOString() },
+      { id: 'm2', step: '1', channel: 'email', subject: '', body: 'Just bringing this back up in case it got buried.', status: 'cancelled', send_after: new Date(Date.now() - 864e5).toISOString(), error: 'they replied' }],
+      inbox: [{ from: l.contact_name + ' <' + l.email + '>', received_at: new Date(Date.now() - 3 * 3600e3).toISOString(), body: 'Thanks Michael, this looks good. How much would the full site cost? Can we talk Thursday?' }] };
+  }
+  if (fn === 'dashAction') toast('Demo mode: nothing was changed');
+  return DEMO;
+}
+var DEMO = (function () {
+  var now = Date.now(), H = 3600e3, Dd = 864e5;
+  var L = [
+    { id: 'L1', company: 'Lyon Grand Cargo', niche: 'logistics', city: 'Lagos', email: 'lyongrandcargo24@gmail.com', phone: '+234 707 091 9004', contact_name: 'Edmond Lyon', tier: 'A', status: 'Interested', est_value: 2500000, needs_you: 'Y', needs_you_reason: 'Asked for the price of the full site and a call on Thursday.', preview_url: '', gaps: 'Free hosting, Gmail address, typos, no quote form', last_contact: new Date(now - 3 * H).toISOString(), next_action: 'Book Thursday call' },
+    { id: 'L2', company: 'Harbourline Homes', niche: 'realestate', city: 'Lekki', email: 'sales@example.com', tier: 'A', status: 'Call booked', est_value: 4000000, needs_you: 'Y', needs_you_reason: 'Call booked for Fri 11:00. Prep: listings portal + WhatsApp bot.', last_contact: new Date(now - Dd).toISOString() },
+    { id: 'L3', company: 'Brightpath Academy', niche: 'school', city: 'Abuja', email: 'admin@example.com', tier: 'B', status: 'Following up', est_value: 3000000, last_contact: new Date(now - 2 * Dd).toISOString(), next_action: 'Follow-up 2 in 5 days' },
+    { id: 'L4', company: 'Cedar Specialist Clinic', niche: 'clinic', city: 'Port Harcourt', email: 'info@example.com', tier: 'B', status: 'Replied', est_value: 2000000, last_contact: new Date(now - 5 * H).toISOString() },
+    { id: 'L5', company: 'Turaco Logistics', niche: 'logistics', city: 'Yaba', phone: '0706 530 4346', tier: 'B', status: 'WhatsApp ready', est_value: 3500000 },
+    { id: 'L6', company: 'Okoro Freight', niche: 'logistics', city: 'Apapa', email: 'ops@example.com', tier: 'C', status: 'Contacted', est_value: 1500000, last_contact: new Date(now - 6 * H).toISOString() },
+    { id: 'L7', company: 'Palmview Estates', niche: 'realestate', city: 'Ikoyi', email: 'hello@example.com', tier: 'A', status: 'Won', est_value: 5500000, last_contact: new Date(now - 2 * Dd).toISOString() },
+    { id: 'L8', company: 'Kids Haven School', niche: 'school', city: 'Ikeja', email: 'office@example.com', tier: 'C', status: 'Queued', est_value: 1800000 }
+  ];
+  return {
+    settings: { AUTO_SEND: true, HOLD_MINUTES: 30, DAILY_CAP_FIRST: 25, DAILY_CAP_TOTAL: 60, FROM_ALIAS: 'michael@ferrnagency.com', MONTHLY_TARGET: 30000000, SEND_START_HOUR: 8, SEND_END_HOUR: 17, PREVIEW_BASE_URL: '' },
+    kpis: { leads: 214, contacted: 163, replied: 19, calls: 6, sentToday: 31, sentWeek: 142, wonMonth: 8000000, pipelineValue: 21500000 },
+    needsYou: L.filter(function (l) { return l.needs_you === 'Y'; }),
+    held: [{ id: 'h1', lead_id: 'L4', company: 'Cedar Specialist Clinic', step: 'R', channel: 'email', body: 'Hi Dr Ada,\n\nThanks for getting back to me. A booking site like the preview usually runs ₦1.8M–₦2.5M depending on the departments...' }],
+    sendingSoon: [
+      { id: 's1', lead_id: 'L8', company: 'Kids Haven School', step: '0', channel: 'email', subject: 'Kids Haven: admissions enquiries', body: 'Hi, I noticed parents can\'t book a school tour on your website...', send_at: new Date(now + 22 * 60e3).toISOString() },
+      { id: 's2', lead_id: 'L3', company: 'Brightpath Academy', step: '2', channel: 'email', subject: '', body: 'One quick thought: schools that let parents start admissions online usually...', send_at: new Date(now + 3 * H).toISOString() }],
+    whatsapp: [{ id: 'w1', lead_id: 'L5', company: 'Turaco Logistics', step: '0', channel: 'whatsapp', to: '0706 530 4346', body: 'Hi, your listing says Turaco clients can track their inventory in real time, but I couldn\'t find a website where they\'d do that...', wa_link: 'https://wa.me/2347065304346' }],
+    recentSent: [
+      { lead_id: 'L6', company: 'Okoro Freight', step: '0', channel: 'email', status: 'sent', sent_at: new Date(now - 6 * H).toISOString() },
+      { lead_id: 'L1', company: 'Lyon Grand Cargo', step: 'R', channel: 'email', status: 'sent', sent_at: new Date(now - 26 * H).toISOString() }],
+    inbox: [{ id: 'i1', lead_id: 'L4', company: 'Cedar Specialist Clinic', from: 'Dr Ada <info@example.com>', received_at: new Date(now - 5 * H).toISOString(), body: 'Hello Michael, interesting. What would it cost and how long would it take?', status: 'new' }],
+    leads: L, statusCounts: {}, logs: [{ time: new Date(now - 6e5).toISOString(), level: 'info', event: 'ingest', detail: 'batch-2026-10-29.json: leads +15 (dups 2), updates 3, messages +46' }]
+  };
+})();
+if (!LIVE) {
+  var dm = document.getElementById('demo');
+  dm.innerHTML = 'You\'re looking at sample data. <a href="#" onclick="showConnect();return false" style="text-decoration:underline">Connect your engine</a> to see your real pipeline.';
+  dm.style.display = 'block';
+}
+load();
+</script>
+</body>
+</html>

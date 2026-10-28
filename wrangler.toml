@@ -1,0 +1,4 @@
+# Cloudflare Pages config: the site is the sites/ folder (no build step needed).
+name = "leadshunter"
+pages_build_output_dir = "sites"
+compatibility_date = "2026-10-01"
